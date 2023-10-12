@@ -1,7 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import local from "next/font/local";
-import Head from "next/head";
+import Providers from "@/providers";
+import Header from "@/components/Header";
 
 const hovesFont = local({
   src: [
@@ -41,10 +42,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         <link rel="icon" href="/logo.ico" />
-      </Head>
-      <body className={hovesFont.variable}>{children}</body>
+      </head>
+      <body
+        className={`${hovesFont.variable} font-sans lg:pt-[96px] bg-light-background-primary dark:bg-dark-background-primary transition-all min-h-screen`}
+      >
+        <Providers>
+          <Header />
+          {children}
+        </Providers>
+      </body>
     </html>
   );
 }
