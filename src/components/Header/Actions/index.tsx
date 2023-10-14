@@ -19,7 +19,7 @@ const HeaderActions = () => {
           setTheme(theme === "light" ? "dark" : "light");
         }}
       />
-      <Button mode="dark">Indi yükle</Button>
+      <Button mode="dark">İndi yüklə</Button>
     </div>
   );
 };

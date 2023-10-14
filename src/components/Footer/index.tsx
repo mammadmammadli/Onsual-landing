@@ -11,8 +11,8 @@ const Footer = () => {
   return (
     <footer>
       <Container>
-        <div className="flex flex-col gap-[120px]">
-          <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-0">
+        <div className="flex flex-col gap-[64px] lg:gap-[120px] pb-8 lg:pb-[56px]">
+          <div className="flex flex-col md:flex-row justify-between gap-6 lg:gap-0">
             <Link href="/">
               <Logo containerClassName="h-8 w-[134px]" />
             </Link>
@@ -23,7 +23,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex justify-between flex-col lg:flex-row gap-[64px] lg:gap-0">
+          <div className="flex justify-between flex-col md:flex-row gap-[64px] md:gap-0">
             <Address />
             <Navigations />
           </div>

@@ -41,7 +41,7 @@ const Button = forwardRef<Ref, MergedButtonProps>((props, ref) => {
     className,
     "py-3 px-5 rounded-full transition-all text-base cursor-pointer",
     {
-      "bg-light-surface-medium dark:bg-dark-surface-medium hover:bg-light-surface-low dark:hover:bg-dark-surface-low":
+      "bg-light-surface-medium bg-light-surface-high dark:bg-dark-surface-medium hover:bg-light-surface-low dark:hover:bg-dark-surface-low":
         mode === "default",
       //TODO: Add hover
       "bg-light-utility-high dark:bg-dark-utility-high text-light-surface-high dark:text-dark-surface-high hover:bg-light-brand-primary dark:hover:bg-dark-brand-primary hover:text-light-source-white hover:dark:text-dark-source-white":

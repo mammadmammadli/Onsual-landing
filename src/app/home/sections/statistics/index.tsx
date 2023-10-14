@@ -10,7 +10,7 @@ const Statistics = () => {
             RƏQƏMLƏRLƏ BİZ
           </h3>
 
-          <div className="flex gap-4 flex-col lg:flex-row">
+          <div className="flex gap-4 flex-col md:flex-row">
             <div className="flex-1">
               <div className="rounded-[20px] lg:rounded-[32px] bg-light-surface-high dark:bg-dark-surface-high p-6 lg:p-8 flex flex-col justify-between h-[200px] lg:h-[248px] transition-all">
                 <h2 className="text-light-brand-primary dark:text-dark-brand-primary text-5xl lg:text-6xl font-medium">

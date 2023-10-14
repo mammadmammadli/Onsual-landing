@@ -12,7 +12,7 @@ const Guides = () => {
             4 ADDIMDA ONSUAL
           </h3>
 
-          <div className="grid gap-4 lg:grid-cols-2">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-2">
             <div className="transition-all p-6 lg:p-8 lg:rounded-[32px] rounded-[24px] flex flex-col gap-4 bg-light-surface-high dark:bg-dark-surface-high h-[396px] lg:h-[412px]">
               <Icon name="login" />
 

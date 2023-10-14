@@ -10,6 +10,10 @@ import Apple from "@/components/Icons/Apple";
 import GooglePlay from "@/components/Icons/GooglePlay";
 import Plus from "@/components/Icons/Plus";
 import Minus from "@/components/Icons/Minus";
+import Glass from "@/components/Icons/Glass";
+import IphoneActions from "@/components/Icons/iphone-actions";
+import Close from "@/components/Icons/Close";
+import Star from "@/components/Icons/Star";
 
 export type IconNames =
   | "apple"
@@ -24,26 +28,38 @@ export type IconNames =
   | "medal-third"
   | "minus"
   | "plus"
-  | "login";
+  | "login"
+  | "watch"
+  | "light"
+  | "close"
+  | "medal"
+  | "star";
 
-type IconProps = SVGProps<SVGSVGElement> & {
-  name: IconNames;
-};
+type IconProps = SVGProps<SVGSVGElement> &
+  (
+    | {
+        name: IconNames;
+      }
+    | {
+        name: "iphone-actions";
+        batteryLevel: number;
+      }
+  );
 
-const Icon = ({ name, ...rest }: IconProps) => {
-  switch (name) {
+const Icon = (props: IconProps) => {
+  switch (props.name) {
     case "moon":
-      return <Moon {...rest} />;
+      return <Moon {...props} />;
     case "sun":
-      return <Sun {...rest} />;
+      return <Sun {...props} />;
     case "bank-note":
-      return <BankNote {...rest} />;
+      return <BankNote {...props} />;
     case "bar-chart":
-      return <BarChart {...rest} />;
+      return <BarChart {...props} />;
     case "login":
-      return <Login {...rest} />;
+      return <Login {...props} />;
     case "target":
-      return <Target {...rest} />;
+      return <Target {...props} />;
     case "medal-first":
       return <Medal type="first" />;
     case "medal-second":
@@ -51,14 +67,25 @@ const Icon = ({ name, ...rest }: IconProps) => {
     case "medal-third":
       return <Medal type="third" />;
     case "apple":
-      return <Apple {...rest} />;
+      return <Apple {...props} />;
     case "google-play":
-      return <GooglePlay {...rest} />;
+      return <GooglePlay {...props} />;
     case "plus":
-      return <Plus {...rest} />;
+      return <Plus {...props} />;
     case "minus":
-      return <Minus {...rest} />;
-
+      return <Minus {...props} />;
+    case "watch":
+      return <Glass icon="watch" {...props} />;
+    case "light":
+      return <Glass icon="light" {...props} />;
+    case "medal":
+      return <Glass icon="medal" {...props} />;
+    case "close":
+      return <Close {...props} />;
+    case "star":
+      return <Star {...props} />;
+    case "iphone-actions":
+      return <IphoneActions mode="dark" {...props} />;
     default:
       return null;
   }

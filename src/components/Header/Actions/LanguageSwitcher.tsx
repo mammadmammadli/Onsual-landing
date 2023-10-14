@@ -23,19 +23,19 @@ const LanguageSwitcher = () => {
         <div className="relative h-5 w-5">
           <Image src={`/images/flags/az.svg`} alt={`az lang`} fill priority />
         </div>
-        <span className="text-base uppercase">AZ</span>
+        <span className="text-base uppercase text-light-utility-high dark:text-dark-utility-high transition-all">AZ</span>
       </Button>
       <Button className={buttonClasses}>
         <div className="relative h-5 w-5">
           <Image src={`/images/flags/ru.svg`} alt={`ru lang`} fill priority />
         </div>
-        <span className="text-base uppercase">RU</span>
+        <span className="text-base uppercase text-light-utility-high dark:text-dark-utility-high transition-all">RU</span>
       </Button>
       <Button className={buttonClasses}>
         <div className="relative h-5 w-5">
           <Image src={`/images/flags/en.svg`} alt={`en lang`} fill priority />
         </div>
-        <span className="text-base uppercase">EN</span>
+        <span className="text-base uppercase text-light-utility-high dark:text-dark-utility-high transition-all">EN</span>
       </Button>
     </div>
   );
