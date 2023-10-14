@@ -81,6 +81,14 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-light-right":
+          "linear-gradient(270deg, #FFF 32.05%, rgba(255, 255, 255, 0.00) 100%)",
+        "gradient-light-left":
+          "linear-gradient(90deg, #FFF 32.05%, rgba(255, 255, 255, 0.00) 100%)",
+        "gradient-dark-right":
+          "linear-gradient(270deg, #161618 32.05%, rgba(22, 22, 24, 0.00) 100%)",
+        "gradient-dark-left":
+          "linear-gradient(90deg, #161618 32.05%, rgba(22, 22, 24, 0.00) 100%)",
       },
       fontFamily: {
         sans: ["var(--font-hoves)"],
@@ -91,7 +99,7 @@ const config: Config = {
           background: {
             primary: "#101012",
             secondary: "#161618",
-            alpha: "rgba(34, 35, 38, 0.64)"
+            alpha: "rgba(34, 35, 38, 0.64)",
           },
           brand: {
             primary: "#2BCF69",
@@ -134,7 +142,9 @@ const config: Config = {
           background: {
             primary: "#F4F6FA",
             secondary: "#FFFFFF",
-            alpha: "rgba(244, 246, 250, 0.64)"
+            alpha: "rgba(244, 246, 250, 0.64)",
+            gradient:
+              "linear-gradient(90deg, #FFF 32.05%, rgba(255, 255, 255, 0.00) 100%);",
           },
           brand: {
             primary: "#02C04A",

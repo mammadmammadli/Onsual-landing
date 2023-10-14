@@ -6,8 +6,14 @@ import BarChart from "@/components/Icons/BarChart";
 import Target from "@/components/Icons/Target";
 import Login from "@/components/Icons/Login";
 import Medal from "@/components/Icons/Medal";
+import Apple from "@/components/Icons/Apple";
+import GooglePlay from "@/components/Icons/GooglePlay";
+import Plus from "@/components/Icons/Plus";
+import Minus from "@/components/Icons/Minus";
 
 export type IconNames =
+  | "apple"
+  | "google-play"
   | "moon"
   | "sun"
   | "bar-chart"
@@ -16,6 +22,8 @@ export type IconNames =
   | "medal-first"
   | "medal-second"
   | "medal-third"
+  | "minus"
+  | "plus"
   | "login";
 
 type IconProps = SVGProps<SVGSVGElement> & {
@@ -42,6 +50,14 @@ const Icon = ({ name, ...rest }: IconProps) => {
       return <Medal type="second" />;
     case "medal-third":
       return <Medal type="third" />;
+    case "apple":
+      return <Apple {...rest} />;
+    case "google-play":
+      return <GooglePlay {...rest} />;
+    case "plus":
+      return <Plus {...rest} />;
+    case "minus":
+      return <Minus {...rest} />;
 
     default:
       return null;

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import local from "next/font/local";
 import Providers from "@/providers";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const hovesFont = local({
   src: [
@@ -51,6 +52,7 @@ export default function RootLayout({
         <Providers>
           <Header />
           {children}
+          <Footer />
         </Providers>
       </body>
     </html>

@@ -28,13 +28,16 @@ const Header = () => {
     };
   }, [blurred, setBlurred]);
 
-  const classes = clsx("transition-all py-[26px] fixed w-full top-0 left-0", {
-    "bg-light-background-alpha dark:bg-dark-background-alpha": blurred,
-    "bg-transparent dark:bg-transparent": !blurred,
-  });
+  const classes = clsx(
+    "z-[9999] transition-all py-[26px] fixed w-full top-0 left-0",
+    {
+      "bg-light-background-alpha dark:bg-dark-background-alpha": blurred,
+      "bg-transparent dark:bg-transparent": !blurred,
+    },
+  );
 
   return (
-    <header className={classes} style={{backdropFilter: "blur(16px)"}}>
+    <header className={classes} style={{ backdropFilter: "blur(16px)" }}>
       <Container>
         <div className="flex justify-between">
           <Link href="/">

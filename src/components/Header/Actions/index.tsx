@@ -12,6 +12,7 @@ const HeaderActions = () => {
     <div className="flex gap-3">
       <LanguageSwitcher />
       <IconButton
+        size="lg"
         icon={theme === "dark" ? "sun" : "moon"}
         className="fill-light-utility-high dark:fill-dark-utility-high"
         onClick={() => {
