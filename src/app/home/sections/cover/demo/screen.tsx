@@ -23,7 +23,8 @@ const Screen = () => {
       <div className="flex justify-between items-center h-[30px]">
         <div className="pl-[14px]">
           <span className="text-light-utility-high dark:text-dark-utility-high text-xs font-semibold">
-            {hours}:{minutes < 10 ? `0${minutes}` : minutes}
+            {hours > 12 ? hours - 12 : hours}:
+            {minutes < 10 ? `0${minutes}` : minutes}
           </span>
         </div>
         <div>
