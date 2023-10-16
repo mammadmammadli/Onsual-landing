@@ -6,9 +6,8 @@ import { useEffect, useState } from "react";
 import IconButton from "@/components/Button/IconButton";
 
 const Screen = () => {
-  const date = new Date();
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
+  const [minutes, setMinutes] = useState<number>();
+  const [hours, setHours] = useState<number>();
   const battery = useBattery();
   const [batteryLevel, setBatteryLevel] = useState(100);
 
@@ -18,15 +17,36 @@ const Screen = () => {
     }
   }, [setBatteryLevel, batteryLevel, battery]);
 
+  useEffect(() => {
+    const timeUpdate = () => {
+      const date = new Date();
+      const hours = date.getHours();
+      const minutes = date.getMinutes();
+
+      setHours(hours);
+      setMinutes(minutes);
+    };
+
+    const timer = setInterval(timeUpdate, 1000 * 60);
+
+    timeUpdate();
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
   return (
     <div className="absolute top-0 h-full bg-light-background-primary dark:bg-dark-background-primary transition-all w-[calc(100%-30px)] z-[1] left-[15px] rounded-[50px] py-4 px-[15px]">
       <div className="flex justify-between items-center h-[30px]">
-        <div className="pl-[14px]">
-          <span className="text-light-utility-high dark:text-dark-utility-high text-xs font-semibold">
-            {hours > 12 ? hours - 12 : hours}:
-            {minutes < 10 ? `0${minutes}` : minutes}
-          </span>
-        </div>
+        {minutes && hours && (
+          <div className="pl-[14px]">
+            <span className="text-light-utility-high dark:text-dark-utility-high text-xs font-semibold">
+              {hours > 12 ? hours - 12 : hours}:
+              {minutes < 10 ? `0${minutes}` : minutes}
+            </span>
+          </div>
+        )}
         <div>
           <Icon
             batteryLevel={batteryLevel}
