@@ -28,6 +28,8 @@ const Counter = ({ countdownProps }: Props) => {
     strokeDashoffset,
   } = useCountdown(countdownProps || defaultCountdownConfig);
 
+  const isPlaying = countdownProps?.isPlaying;
+
   return (
     <div className="relative h-[48px] w-[48px]">
       <svg
@@ -37,7 +39,6 @@ const Counter = ({ countdownProps }: Props) => {
         height={size}
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path d={path} fill="none" stroke={"none"} strokeWidth={strokeWidth} />
         <path
           className="stroke-light-brand-primary dark:stroke-dark-brand-primary"
           d={path}
@@ -45,12 +46,12 @@ const Counter = ({ countdownProps }: Props) => {
           strokeLinecap="round"
           strokeWidth={strokeWidth}
           strokeDasharray={pathLength}
-          strokeDashoffset={strokeDashoffset}
+          strokeDashoffset={isPlaying ? strokeDashoffset : 0}
         />
       </svg>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <span className="text-light-brand-primary dark:text-dark-brand-primary font-semibold transition-all text-xl">
-          {remainingTime}
+          {isPlaying ? remainingTime : 10}
         </span>
       </div>
     </div>

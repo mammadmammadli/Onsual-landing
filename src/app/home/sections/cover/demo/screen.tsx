@@ -77,7 +77,7 @@ const Screen = () => {
         </div>
       </div>
 
-      <Quiz />
+      <Quiz lottieSection="cover" />
     </div>
   );
 };

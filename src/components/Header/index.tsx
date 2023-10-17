@@ -29,7 +29,7 @@ const Header = () => {
   }, [blurred, setBlurred]);
 
   const classes = clsx(
-    "z-[9999] transition-all py-[26px] fixed w-full top-0 left-0",
+    "z-[9000] transition-all py-4 lg:py-6 px-4 lg:px-0 fixed w-full top-0 left-0",
     {
       "bg-light-background-alpha dark:bg-dark-background-alpha": blurred,
       "bg-transparent dark:bg-transparent": !blurred,

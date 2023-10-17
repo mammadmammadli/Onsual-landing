@@ -11,15 +11,17 @@ const HeaderActions = () => {
   return (
     <div className="flex gap-3">
       <LanguageSwitcher />
-      <IconButton
-        size="lg"
-        icon={theme === "dark" ? "sun" : "moon"}
-        className="fill-light-utility-high dark:fill-dark-utility-high"
-        onClick={() => {
-          setTheme(theme === "light" ? "dark" : "light");
-        }}
-      />
-      <Button mode="dark">İndi yüklə</Button>
+      <div className="hidden lg:block">
+        <IconButton
+          size="lg"
+          icon={theme === "dark" ? "sun" : "moon"}
+          className="fill-light-utility-high dark:fill-dark-utility-high"
+          onClick={() => {
+            setTheme(theme === "light" ? "dark" : "light");
+          }}
+        />
+      </div>
+      <Button mode="dark" className="pl-4 pr-4 py-[10px]">İndi yüklə</Button>
     </div>
   );
 };

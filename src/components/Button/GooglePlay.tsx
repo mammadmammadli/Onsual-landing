@@ -14,7 +14,7 @@ const AppleStore = ({ className, mode = "dark" }: Props) => {
     "dark:fill-light-utility-high fill-dark-utility-high group-hover:fill-light-source-white group-hover:dark:fill-dark-source-white":
       mode === "dark",
     "fill-light-source-white dark:fill-dark-source-white":
-      mode === "transparent",
+      mode === "transparent" || mode === "success",
   });
 
   return (

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import AccordionItem from "@/components/Header/Actions/AccordionItem";
+import AccordionItem from "@/components/Accordion/AccordionItem";
 
 type AccordionProps = {
   questions: Array<{
