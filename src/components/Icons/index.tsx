@@ -14,6 +14,7 @@ import Glass from "@/components/Icons/Glass";
 import IphoneActions from "@/components/Icons/iphone-actions";
 import Close from "@/components/Icons/Close";
 import Star from "@/components/Icons/Star";
+import QuizRectangle from "@/components/Icons/QuizRectangle";
 
 export type IconNames =
   | "apple"
@@ -33,7 +34,8 @@ export type IconNames =
   | "light"
   | "close"
   | "medal"
-  | "star";
+  | "star"
+  | "quiz-rectangle";
 
 type IconProps = SVGProps<SVGSVGElement> &
   (
@@ -84,6 +86,8 @@ const Icon = (props: IconProps) => {
       return <Close {...props} />;
     case "star":
       return <Star {...props} />;
+    case "quiz-rectangle":
+      return <QuizRectangle {...props} />;
     case "iphone-actions":
       return <IphoneActions mode="dark" {...props} />;
     default:

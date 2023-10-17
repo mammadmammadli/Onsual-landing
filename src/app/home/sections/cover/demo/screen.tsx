@@ -4,6 +4,7 @@ import Icon from "@/components/Icons";
 import { useBattery } from "react-use";
 import { useEffect, useState } from "react";
 import IconButton from "@/components/Button/IconButton";
+import Quiz from "@/components/Quiz";
 
 const Screen = () => {
   const [minutes, setMinutes] = useState<number>();
@@ -37,7 +38,7 @@ const Screen = () => {
   }, []);
 
   return (
-    <div className="absolute top-0 h-full bg-light-background-primary dark:bg-dark-background-primary transition-all w-[calc(100%-30px)] z-[1] left-[15px] rounded-[50px] py-4 px-[15px]">
+    <div className="absolute top-0 h-full bg-light-background-primary dark:bg-dark-background-primary transition-all w-[calc(100%-30px)] z-[1] left-[15px] rounded-[50px] pt-4 px-[10px]">
       <div className="flex justify-between items-center h-[30px]">
         {minutes && hours && (
           <div className="pl-[14px]">
@@ -56,7 +57,7 @@ const Screen = () => {
         </div>
       </div>
 
-      <div className="pt-3 flex justify-between items-center">
+      <div className="pt-2 flex justify-between items-center px-0.5">
         <IconButton
           icon="close"
           size="sm"
@@ -75,6 +76,8 @@ const Screen = () => {
           </span>
         </div>
       </div>
+
+      <Quiz />
     </div>
   );
 };

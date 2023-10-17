@@ -98,7 +98,7 @@ const config: Config = {
         dark: {
           background: {
             primary: "#101012",
-            secondary: "#161618",
+            secondary: "#1C1C1F",
             alpha: "rgba(34, 35, 38, 0.64)",
           },
           brand: {
@@ -127,9 +127,9 @@ const config: Config = {
             white: "#FFFFFF",
           },
           surface: {
-            high: "#161618",
-            low: "#27292B",
-            medium: "#1E1F21",
+            high: "#1C1C1F",
+            low: "#292B2E",
+            medium: "#222326",
           },
           utility: {
             disabled: "#21272C",
