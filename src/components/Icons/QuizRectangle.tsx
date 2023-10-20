@@ -5,7 +5,7 @@ type Props = SVGProps<SVGSVGElement>;
 const QuizRectangle = (props: Props) => {
   return (
     <svg
-      width="240"
+      preserveAspectRatio="none"
       height="48"
       viewBox="0 0 240 48"
       xmlns="http://www.w3.org/2000/svg"

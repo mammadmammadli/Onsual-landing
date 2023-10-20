@@ -9,6 +9,7 @@ import Cover from "@/app/home/sections/cover";
 import Lottie from "lottie-react";
 import Confetti from "@/animations/confetti.json";
 import { useLottie } from "@/providers/LottieProvider";
+import Amount from "@/app/home/sections/amount";
 
 const HomePage = () => {
   const { activeLottie, setActiveLottie, clearActiveLottie } = useLottie();
@@ -17,6 +18,7 @@ const HomePage = () => {
     <div className="pb-[36px] lg:pb-[100px] pt-[100px] lg:pt-5">
       <Cover />
       <Guides />
+      <Amount />
       <Statistics />
       <Answers />
       <FAQ />

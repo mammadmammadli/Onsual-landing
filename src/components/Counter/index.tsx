@@ -4,6 +4,7 @@ import {
 } from "react-countdown-circle-timer";
 
 type Props = {
+  isPaused?: boolean;
   countdownProps?: CountdownProps;
 };
 
@@ -18,7 +19,7 @@ const defaultCountdownConfig: CountdownProps = {
   },
 };
 
-const Counter = ({ countdownProps }: Props) => {
+const Counter = ({ countdownProps, isPaused }: Props) => {
   const {
     path,
     pathLength,
@@ -46,12 +47,12 @@ const Counter = ({ countdownProps }: Props) => {
           strokeLinecap="round"
           strokeWidth={strokeWidth}
           strokeDasharray={pathLength}
-          strokeDashoffset={isPlaying ? strokeDashoffset : 0}
+          strokeDashoffset={isPlaying || isPaused ? strokeDashoffset : 0}
         />
       </svg>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <span className="text-light-brand-primary dark:text-dark-brand-primary font-semibold transition-all text-xl">
-          {isPlaying ? remainingTime : 10}
+          {isPaused || isPlaying ? remainingTime : 10}
         </span>
       </div>
     </div>

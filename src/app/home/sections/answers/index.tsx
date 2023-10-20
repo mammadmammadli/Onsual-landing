@@ -2,6 +2,40 @@ import SectionWrapper from "@/components/SectionWrapper";
 import Container from "@/components/Container";
 import AnswerRow from "@/app/home/sections/answers/AnswerRow";
 
+const mockAnswers = {
+  first: [
+    '"batika" sözündə ilk "b" hərfi neçənci hərfdir?"',
+    "Vilayet landing ne vaxta hazir olar?",
+    "1028",
+    "2 ay 15 gün",
+    "% & + $",
+    "Fidan androidi tezden bashladi cumlesi neche herflidi?",
+  ],
+  second: [
+    "Aşağıdakılardan hansı ən kiçik ədəddir?",
+    "-186",
+    "Vilayet dizaynin superdi amma dagildim 🫶🏻",
+    "5 simvollu sözü seçin",
+    "En pis gunumuz bele kecsin",
+  ],
+  third: [
+    "Samitlə başlayıb saitlə bitən sözü seçin",
+    "185 482",
+    "Backendden response niye 10 ile gelir?",
+    "1700.12",
+    "Uğurlu",
+    "Memmed YEK",
+    "Uzeryinden nifret eden 1 milyon nefer axtarirdiq",
+  ],
+  fourth: [
+    '"elektrooptiki" sözündə 3-cü hərfi böyük olan cavabı seçin"',
+    "! - . %",
+    "Ayxan tapdi!",
+    "GÜVƏN",
+    "Teymur bilmedim sene ne yazam 🤣",
+  ],
+};
+
 const Answers = () => {
   return (
     <SectionWrapper>
@@ -19,8 +53,16 @@ const Answers = () => {
             <div className="h-full w-[64px] lg:w-[200px] absolute top-0 left-0 bg-gradient-light-left dark:bg-gradient-dark-left transition-all z-[10]" />
             <div className="h-full w-[64px] lg:w-[200px] absolute top-0 right-0 bg-gradient-light-right dark:bg-gradient-dark-right transition-all z-[10]" />
 
-            <div className="relative w-full max-w-full overflow-x-hidden flex items-center gap-2 lg:gap-4">
-              <AnswerRow />
+            <div className="relative w-full max-w-full overflow-x-hidden flex flex-col items-center gap-2 lg:gap-4">
+              {Object.entries(mockAnswers).map(([, answers], i) => {
+                return (
+                  <AnswerRow
+                    key={i}
+                    answers={answers}
+                    direction={i % 2 === 0 ? "right" : "left"}
+                  />
+                );
+              })}
             </div>
           </div>
         </div>

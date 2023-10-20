@@ -1,21 +1,34 @@
 import Counter from "@/components/Counter";
 import Icon from "@/components/Icons";
 import { LottieSections, useLottie } from "@/providers/LottieProvider";
+import { clsx } from "clsx";
 
 type Props = {
   lottieSection: LottieSections;
+  isPaused?: boolean;
 };
 
-const Quiz = ({ lottieSection }: Props) => {
+const Quiz = ({ lottieSection, isPaused = false }: Props) => {
   const { setActiveLottie, previousLotties } = useLottie();
+
+  const descriptionClass = clsx(
+    "text-light-utility-high dark:text-dark-utility-high transition-all",
+    {
+      "font-medium text-base": lottieSection === "guide-item",
+      "font-semibold text-lg ": lottieSection === "cover",
+    },
+  );
 
   return (
     <div className="pt-6 mt-[14px]">
       <div className="w-full relative">
         <div className="absolute left-1/2 -translate-x-1/2 -top-1/2">
           <Counter
+            isPaused={isPaused}
             countdownProps={{
-              isPlaying: !previousLotties.includes(lottieSection),
+              isPlaying: isPaused
+                ? false
+                : !previousLotties.includes(lottieSection),
               duration: 10,
               colors: "#fff",
             }}
@@ -30,9 +43,7 @@ const Quiz = ({ lottieSection }: Props) => {
         <span className="font-medium text-sm text-light-utility-medium dark:text-dark-utility-medium transition-all">
           Sual 10/10
         </span>
-        <span className="font-semibold text-lg text-light-utility-high dark:text-dark-utility-high transition-all">
-          Niyə Onsual?
-        </span>
+        <span className={descriptionClass}>Niyə Onsual?</span>
       </div>
       <div className="px-3 pt-4 bg-light-surface-high dark:bg-dark-surface-high transition-all">
         <div className="flex flex-col gap-1">

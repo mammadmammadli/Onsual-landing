@@ -2,6 +2,8 @@ import SectionWrapper from "@/components/SectionWrapper";
 import Container from "@/components/Container";
 import Icon from "@/components/Icons";
 import Rating from "@/app/home/sections/guides/Rating";
+import Participation from "@/app/home/sections/guides/Participation";
+import Win from "@/app/home/sections/guides/Win";
 
 const Guides = () => {
   return (
@@ -26,47 +28,9 @@ const Guides = () => {
                 </span>
               </div>
             </div>
-            <div className="transition-all p-6 lg:p-8 lg:rounded-[32px] rounded-[24px] flex flex-col gap-4 bg-light-surface-high dark:bg-dark-surface-high h-[396px] lg:h-[412px]">
-              <Icon name="target" />
-
-              <div className="flex flex-col gap-2">
-                <span className="font-medium text-2xl text-light-utility-high dark:text-dark-utility-high">
-                  İştirak
-                </span>
-                <span className="font-normal text-lg text-light-utility-medium dark:text-dark-utility-medium">
-                  Gün ərzində təqdim olunan yarışmalarda iştirak edərək xallar
-                  qazanın
-                </span>
-              </div>
-            </div>
-            <div className="transition-all p-6 lg:p-8 lg:rounded-[32px] rounded-[24px] flex flex-col gap-4 bg-light-surface-high dark:bg-dark-surface-high h-[396px] lg:h-[412px]">
-              <Icon name="bar-chart" />
-
-              <div className="flex flex-col gap-2">
-                <span className="font-medium text-2xl text-light-utility-high dark:text-dark-utility-high">
-                  Sıralama
-                </span>
-                <span className="font-normal text-lg text-light-utility-medium dark:text-dark-utility-medium">
-                  Yığdığını xallara uyğun olaraq sıralamada müvafiq yerləri
-                  tutun
-                </span>
-              </div>
-
-              <Rating />
-            </div>
-            <div className="transition-all p-6 lg:p-8 lg:rounded-[32px] rounded-[24px] flex flex-col gap-4 bg-light-surface-high dark:bg-dark-surface-high h-[396px] lg:h-[412px]">
-              <Icon name="bank-note" />
-
-              <div className="flex flex-col gap-2">
-                <span className="font-medium text-2xl text-light-utility-high dark:text-dark-utility-high">
-                  Mükafat qazan
-                </span>
-                <span className="font-normal text-lg text-light-utility-medium dark:text-dark-utility-medium">
-                  Yr pin narwhal poutine readymade tile semiotics on santo
-                  viral. Tumblr tumeric plant disrupt sriracha chicken.
-                </span>
-              </div>
-            </div>
+            <Participation />
+            <Rating />
+            <Win />
           </div>
         </div>
       </Container>
