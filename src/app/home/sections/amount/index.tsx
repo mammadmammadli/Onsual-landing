@@ -5,7 +5,7 @@ import NumberIncrease from "@/components/NumberIncreaser";
 const Amount = () => {
   return (
     <SectionWrapper>
-      <Container>
+      <Container className="hidden lg:block">
         <div className="lg:px-[64px]">
           <div className="flex flex-col gap-1 lg:gap-4 items-center">
             <NumberIncrease />
