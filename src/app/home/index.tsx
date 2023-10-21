@@ -23,7 +23,7 @@ const HomePage = () => {
     const isDownloadAppOpenCookie = getCookie("download-app-open");
     let listener: () => void;
 
-    if (!isDownloadAppOpenCookie) {
+    if (true) {
       listener = debounce(() => {
         if (window.scrollY > 1000) {
           setCookie("download-app-open", true, { maxAge: 60 * 60 * 24 });

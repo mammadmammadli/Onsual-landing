@@ -14,7 +14,7 @@ const DownloadApp = ({ onClose, isOpen }: Props) => {
 
   return (
     <AnimatePresence initial={false}>
-      <div className="flex md:hidden fixed top-0 left-0 h-screen w-screen bg-transparet pointer-events-none z-[99999] p-4 flex-col-reverse">
+      <div className="flex md:hidden fixed top-0 left-0 h-[100dvh] w-screen bg-transparet pointer-events-none z-[99999] p-4 flex-col-reverse">
         <motion.div
           className="relative"
           initial={{ opacity: 0, y: '100%' }}
