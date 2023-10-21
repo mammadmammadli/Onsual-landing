@@ -9,7 +9,7 @@ const Demo = () => {
           <Image
             className="w-auto h-auto"
             priority
-            src={"/images/iphone14pro.png"}
+            src="/images/iphone14pro.png"
             alt="cover"
             height={590}
             width={290}

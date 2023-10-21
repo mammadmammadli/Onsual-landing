@@ -10,9 +10,36 @@ import Lottie from "lottie-react";
 import Confetti from "@/animations/confetti.json";
 import { useLottie } from "@/providers/LottieProvider";
 import Amount from "@/app/home/sections/amount";
+import DownloadApp from "@/app/home/components/DownloadApp";
+import { useEffect, useState } from "react";
+import { debounce } from "next/dist/server/utils";
+import { getCookie, setCookie } from "cookies-next";
 
 const HomePage = () => {
   const { activeLottie, setActiveLottie, clearActiveLottie } = useLottie();
+  const [isDownloadAppOpen, setIsDownloadAppOpen] = useState(false);
+
+  useEffect(() => {
+    const isDownloadAppOpenCookie = getCookie("download-app-open");
+    let listener: () => void;
+
+    if (!isDownloadAppOpenCookie) {
+      listener = debounce(() => {
+        if (window.scrollY > 1000) {
+          setCookie("download-app-open", true, { maxAge: 60 * 60 * 24 });
+          setIsDownloadAppOpen(true);
+        }
+      }, 500);
+
+      window.addEventListener("scroll", listener);
+    }
+
+    return () => {
+      if (listener) {
+        window.removeEventListener("scroll", listener);
+      }
+    };
+  }, [setIsDownloadAppOpen]);
 
   return (
     <div className="pb-[36px] lg:pb-[100px] pt-[100px] lg:pt-5">
@@ -23,6 +50,10 @@ const HomePage = () => {
       <Answers />
       <FAQ />
       <Banner />
+      <DownloadApp
+        onClose={() => setIsDownloadAppOpen(false)}
+        isOpen={isDownloadAppOpen}
+      />
       {activeLottie === "cover" && (
         <div className="absolute top-0 h-screen w-full  z-[9999] pointer-events-none">
           <Lottie

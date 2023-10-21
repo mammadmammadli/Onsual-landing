@@ -39,7 +39,7 @@ const Button = forwardRef<Ref, MergedButtonProps>((props, ref) => {
 
   const classes = clsx(
     className,
-    "py-3 px-5 rounded-full transition-all text-base cursor-pointer",
+    "py-3 px-5 rounded-full transition-all text-base cursor-pointer flex justify-center items-center",
     {
       "bg-light-surface-medium bg-light-surface-high dark:bg-dark-surface-medium hover:bg-light-surface-low dark:hover:bg-dark-surface-low":
         mode === "default",

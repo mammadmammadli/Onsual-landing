@@ -5,8 +5,7 @@ type Props = SVGProps<SVGSVGElement>;
 const Close = (props: Props) => {
   return (
     <svg
-      width="16"
-      height="16"
+      preserveAspectRatio="none"
       viewBox="0 0 16 16"
       xmlns="http://www.w3.org/2000/svg"
       {...props}

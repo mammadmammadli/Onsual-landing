@@ -11,28 +11,6 @@ const Providers = ({ children }: ProvidersProps) => {
 
   useEffect(() => {
     setMounted(true);
-
-    function getMobileOperatingSystem() {
-      const userAgent = navigator.userAgent;
-
-      if (/windows phone/i.test(userAgent)) {
-        return "Windows Phone";
-      }
-
-      if (/android/i.test(userAgent)) {
-        return "Android";
-      }
-
-      if (/iPad|iPhone|iPod/.test(userAgent)) {
-        return "iOS";
-      }
-
-      return "unknown";
-    }
-
-    setTimeout(() => {
-      alert(getMobileOperatingSystem());
-    }, 5000);
   }, []);
 
   if (!mounted) {
