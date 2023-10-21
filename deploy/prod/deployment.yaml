@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: fe-landing
+  name: fe-landing
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fe-landing
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: fe-landing
+    spec:
+      containers:
+      - image: onsual/fe-landing:latest
+        name: fe-landing
+        resources: {}
+      imagePullSecrets:
+      - name: regcred
+status: {}
