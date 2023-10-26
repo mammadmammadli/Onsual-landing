@@ -62,7 +62,7 @@ const Screen = () => {
           icon="close"
           size="sm"
           iconClassName="fill-light-utility-low dark:fill-dark-utility-low"
-          className="!bg-light-surface-high dark:!bg-dark-surface-high"
+          className="!bg-light-surface-high dark:!bg-dark-surface-high pl-2 pt-2 pr-2 pb-2"
         />
 
         <div className="p-2 bg-light-surface-high dark:bg-dark-surface-high transition-all rounded-full gap-1 flex">

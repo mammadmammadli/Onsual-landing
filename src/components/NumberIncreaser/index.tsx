@@ -1,19 +1,34 @@
-import NumberIncreaseAnimation from "@/components/NumberIncreaser/NumberIncreaserAnimation";
+import Increaser from "@/components/NumberIncreaser/NumberIncreaserAnimation";
 
 const NumberIncrease = () => {
   return (
-    <div className="flex gap-[62px]">
+    <div className="flex gap-[62px] overflow-hidden">
       <div className="flex">
-        <div className="relative h-[140px] w-[67.4px] overflow-hidden">
-          <span className="text-[140px] font-bold leading-[140px] text-light-brand-primary dark:text-dark-brand-primary transition-all">
-            1
-          </span>
-        </div>
-        <NumberIncreaseAnimation duration={6} number={0} />
-        <NumberIncreaseAnimation duration={4} number={0} />
+        <Increaser
+          length={2}
+          y={[null, "calc(-100% + 100px)", "calc(-100% + 140px)"]}
+        />
+        <Increaser
+          length={11}
+          y={[
+            null,
+            "calc(-100% + 10px)",
+            "calc(-100% + 180px)",
+            "calc(-100% + 140px)",
+          ]}
+        />
+        <Increaser
+          length={101}
+          y={[
+            null,
+            "calc(-100% + 100px)",
+            "calc(-100% + 160px)",
+            "calc(-100% + 140px)",
+          ]}
+        />
       </div>
 
-      <span className="text-[140px] font-bold leading-[140px] text-light-brand-primary dark:text-dark-brand-primary transition-all">
+      <span className="text-[199px] font-bold leading-[136px] text-light-brand-primary dark:text-dark-brand-primary transition-all">
         AZN
       </span>
     </div>

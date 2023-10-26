@@ -37,8 +37,8 @@ const Header = () => {
   );
 
   return (
-    <header className={classes} style={{ backdropFilter: "blur(16px)" }}>
-      <Container>
+    <header className={classes} style={{ backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)" }}>
+      <Container className="lg:px-[64px]">
         <div className="flex justify-between">
           <Link href="/">
             <Logo containerClassName="h-8 lg:h-10 aspect-[21/5]" />

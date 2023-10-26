@@ -31,6 +31,7 @@ const Quiz = ({ lottieSection, isPaused = false }: Props) => {
                 : !previousLotties.includes(lottieSection),
               duration: 10,
               colors: "#fff",
+              rotation: "counterclockwise",
             }}
           />
         </div>

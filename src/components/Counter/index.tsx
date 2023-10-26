@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import {
   Props as CountdownProps,
   useCountdown,
@@ -11,6 +12,7 @@ type Props = {
 const defaultCountdownConfig: CountdownProps = {
   isPlaying: true,
   duration: 10,
+  rotation: "counterclockwise",
   colors: "#fff",
   onComplete: () => {
     return {
@@ -31,6 +33,22 @@ const Counter = ({ countdownProps, isPaused }: Props) => {
 
   const isPlaying = countdownProps?.isPlaying;
 
+  const strokeClasses = clsx("transition-all", {
+    "stroke-light-brand-primary dark:stroke-dark-brand-primary":
+      remainingTime > 5,
+    "stroke-light-source-warning dark:stroke-dark-source-warning":
+      remainingTime <= 5 && remainingTime > 2,
+    "stroke-light-source-error dark:stroke-dark-source-error":
+      remainingTime <= 2,
+  });
+
+  const textClasses = clsx("font-semibold transition-all text-xl", {
+    "text-light-brand-primary dark:text-dark-brand-primary": remainingTime > 5,
+    "text-light-source-warning dark:text-dark-source-warning":
+      remainingTime <= 5 && remainingTime > 2,
+    "text-light-source-error dark:text-dark-source-error": remainingTime <= 2,
+  });
+
   return (
     <div className="relative h-[48px] w-[48px]">
       <svg
@@ -41,7 +59,7 @@ const Counter = ({ countdownProps, isPaused }: Props) => {
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          className="stroke-light-brand-primary dark:stroke-dark-brand-primary"
+          className={strokeClasses}
           d={path}
           fill="none"
           strokeLinecap="round"
@@ -51,7 +69,7 @@ const Counter = ({ countdownProps, isPaused }: Props) => {
         />
       </svg>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-        <span className="text-light-brand-primary dark:text-dark-brand-primary font-semibold transition-all text-xl">
+        <span className={textClasses}>
           {isPaused || isPlaying ? remainingTime : 10}
         </span>
       </div>
