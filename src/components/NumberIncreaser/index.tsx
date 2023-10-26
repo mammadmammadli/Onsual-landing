@@ -1,6 +1,8 @@
 import Increaser from "@/components/NumberIncreaser/NumberIncreaserAnimation";
+import { useEffect, useRef, useState } from "react";
 
 const NumberIncrease = () => {
+
   return (
     <div className="flex gap-[62px] overflow-hidden">
       <div className="flex">

@@ -1,17 +1,65 @@
 "use client";
 
-import { AnimatePresence, CustomValueType, motion } from "framer-motion";
+import { AnimatePresence, motion, useAnimationControls } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 type Props = {
   length: number;
   y: any;
 };
 
-const NewIncreaser = ({ length, y }: Props) => {
+const NumberIncreaser = ({ length, y }: Props) => {
   const elements = Array.from({ length }, (_, i) => i % 10);
+  const ref = useRef(null);
+  const controls = useAnimationControls();
+  const [isAnimated, setAnimated] = useState(false);
+
+  const handleScroll = () => {
+    if (ref.current) {
+      const element = ref.current as HTMLElement;
+      const top = element.offsetTop;
+
+      const height = element.offsetHeight;
+
+      if (window.scrollY + window.innerHeight >= top && !isAnimated) {
+        controls.set({
+          y: "0",
+        });
+
+        controls.start({
+          y,
+          transition: {
+            ease: "easeOut",
+            duration: 3,
+            times: [0, 0.8, 1],
+          },
+        });
+
+        setAnimated(true);
+      } else if (
+        (window.scrollY + window.innerHeight < top ||
+          window.scrollY > top + height) &&
+        isAnimated
+      ) {
+        setAnimated(false);
+
+        controls.set({
+          y: "0",
+        });
+      }
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isAnimated, setAnimated]);
 
   return (
-    <div className="relative h-[140px] overflow-hidden">
+    <div className="relative h-[140px] overflow-hidden" ref={ref}>
       <AnimatePresence>
         <motion.div
           inherit={false}
@@ -20,14 +68,7 @@ const NewIncreaser = ({ length, y }: Props) => {
           initial={{
             y: "0",
           }}
-          animate={{
-            y
-          }}
-          transition={{
-            ease: "easeOut",
-            duration: 3,
-            times: [0, 0.8, 1],
-          }}
+          animate={controls}
         >
           {elements.map((element, i) => (
             <span
@@ -43,4 +84,4 @@ const NewIncreaser = ({ length, y }: Props) => {
   );
 };
 
-export default NewIncreaser;
+export default NumberIncreaser;
