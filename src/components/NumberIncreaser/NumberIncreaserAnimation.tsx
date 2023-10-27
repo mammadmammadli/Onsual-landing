@@ -15,10 +15,9 @@ const NumberIncreaser = ({ length, y }: Props) => {
   const [isAnimated, setAnimated] = useState(false);
 
   const handleScroll = () => {
-    if (ref.current) {
+    if (ref.current && !isAnimated) {
       const element = ref.current as HTMLElement;
       const top = element.offsetTop;
-
       const height = element.offsetHeight;
 
       if (window.scrollY + window.innerHeight >= top && !isAnimated) {
@@ -59,12 +58,12 @@ const NumberIncreaser = ({ length, y }: Props) => {
   }, [isAnimated, setAnimated]);
 
   return (
-    <div className="relative h-[140px] overflow-hidden" ref={ref}>
+    <div className="relative h-[80px] lg:h-[140px] overflow-hidden" ref={ref}>
       <AnimatePresence>
         <motion.div
           inherit={false}
           key="first"
-          className="flex flex-col items-center gap-8"
+          className="flex flex-col items-center lg:gap-8"
           initial={{
             y: "0",
           }}
@@ -73,7 +72,7 @@ const NumberIncreaser = ({ length, y }: Props) => {
           {elements.map((element, i) => (
             <span
               key={i}
-              className="text-[190px] font-bold leading-[142px] text-light-brand-primary dark:text-dark-brand-primary transition-all"
+              className="text-7xl lg:text-[190px] font-bold lg:leading-[142px] text-light-brand-primary dark:text-dark-brand-primary transition-all"
             >
               {element}
             </span>
