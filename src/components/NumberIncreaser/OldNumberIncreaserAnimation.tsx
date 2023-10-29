@@ -33,8 +33,6 @@ const NumberIncreaserAnimation = ({
       timer = setInterval(() => {
         iterations++;
 
-        console.log({ iterations });
-
         if (iterations === repeat) {
           setIsStopped(true);
           clearInterval(timer);

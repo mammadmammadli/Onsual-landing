@@ -15,11 +15,13 @@ import IphoneActions from "@/components/Icons/iphone-actions";
 import Close from "@/components/Icons/Close";
 import Star from "@/components/Icons/Star";
 import QuizRectangle from "@/components/Icons/QuizRectangle";
+import Chevron from "@/components/Icons/Chevron";
 
 export type IconNames =
   | "apple"
   | "google-play"
   | "moon"
+  | "chevron-down"
   | "sun"
   | "bar-chart"
   | "bank-note"
@@ -88,6 +90,8 @@ const Icon = (props: IconProps) => {
       return <Star {...props} />;
     case "quiz-rectangle":
       return <QuizRectangle {...props} />;
+    case "chevron-down":
+      return <Chevron {...props} direction="down" />;
     case "iphone-actions":
       return <IphoneActions mode="dark" {...props} />;
     default:
