@@ -16,7 +16,7 @@ const Rating = () => {
     leaderboardIteration: number;
   }>({
     order: leaderBoardScorersMapper[0],
-    animateState: "paused",
+    animateState: "playing",
     leaderboardIteration: 0,
   });
 
@@ -47,17 +47,7 @@ const Rating = () => {
   }, [order.leaderboardIteration, order.animateState, order.order]);
 
   return (
-    <div
-      className="transition-all p-6 lg:p-8 lg:rounded-[32px] rounded-[24px] flex flex-col gap-4 bg-light-surface-high dark:bg-dark-surface-high h-[396px] lg:h-[412px]"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={() => {
-        clearInterval(handler);
-        setOrder({
-          ...order,
-          animateState: "paused",
-        });
-      }}
-    >
+    <div className="transition-all p-6 lg:p-8 lg:rounded-[32px] rounded-[24px] flex flex-col gap-4 bg-light-surface-high dark:bg-dark-surface-high h-[396px] lg:h-[412px]">
       <Icon name="bar-chart" />
 
       <div className="flex flex-col gap-2">

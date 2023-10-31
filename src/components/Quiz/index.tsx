@@ -26,6 +26,11 @@ const Quiz = ({ lottieSection, isPaused = false }: Props) => {
           <Counter
             isPaused={isPaused}
             countdownProps={{
+              onComplete: () => {
+                return {
+                  shouldRepeat: true
+                }
+              },
               isPlaying: isPaused
                 ? false
                 : !previousLotties.includes(lottieSection),
