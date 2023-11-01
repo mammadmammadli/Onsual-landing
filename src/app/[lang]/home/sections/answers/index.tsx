@@ -1,6 +1,6 @@
 import SectionWrapper from "@/components/SectionWrapper";
 import Container from "@/components/Container";
-import AnswerRow from "@/app/home/sections/answers/AnswerRow";
+import AnswerRow from "@/app/[lang]/home/sections/answers/AnswerRow";
 
 const mockAnswers = {
   first: [

@@ -1,22 +1,26 @@
 import Icon from "@/components/Icons";
-import PhoneNumber from "@/app/home/sections/guides/Register/PhoneNumber";
-import CountrySelector from "@/app/home/sections/guides/Register/CountrySelector";
+import PhoneNumber from "@/app/[lang]/home/sections/guides/Register/PhoneNumber";
+import CountrySelector from "@/app/[lang]/home/sections/guides/Register/CountrySelector";
+import { useTranslation } from "@/app/i18n/client";
 
 const Index = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="transition-all p-6 lg:p-8 lg:rounded-[32px] rounded-[24px] flex flex-col gap-4 bg-light-surface-high dark:bg-dark-surface-high h-[396px] lg:h-[412px]">
       <Icon name="login" />
 
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 flex-1">
         <span className="font-medium text-2xl text-light-utility-high dark:text-dark-utility-high">
-          Qeydiyyat
+          {t("guides.register.title")}
         </span>
-        <span className="font-normal text-lg text-light-utility-medium dark:text-dark-utility-medium">
-          Sadəcə mobil nömrənizi daxil edərək çox asan şəkildə qeydiyyatdan
-          keçin
-        </span>
+        <div className="flex items-center flex-1">
+          <span className="font-normal text-lg text-light-utility-medium dark:text-dark-utility-medium">
+            {t("guides.register.description")}
+          </span>
+        </div>
       </div>
-      <div className="flex-1 rounded-2xl bg-light-background-primary dark:bg-dark-background-primary overflow-hidden transition-all flex items-center">
+      <div className="rounded-2xl bg-light-background-primary dark:bg-dark-background-primary overflow-hidden transition-all flex items-center max-h-[200px] mt-auto h-[200px]">
         <div className="flex flex-col gap-1 translate-x-[40px] lg:translate-x-[64px] w-full">
           <div>
             <span className="text-light-utility-medium dark:text-dark-utility-medium transition-all text-base font-normal">

@@ -2,41 +2,58 @@
 
 import Button from "@/components/Button";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { clsx } from "clsx";
+import { useTranslation } from "@/app/i18n/client";
+import { usePathname } from "next/navigation";
+import { useRouter } from "next/router";
 
 const languages = ["en", "ru", "az"];
 
 const LanguageSwitcher = () => {
-  const [activeLang, setActiveLang] = useState("en");
+  const pathname = usePathname();
   const [isOpen, setOpen] = useState(false);
   const buttonClasses = clsx(
-    "gap-2 items-center flex transition-all pl-4 font-medium absolute opacity-100 right-0",
+    "gap-2 items-center flex transition-all pl-4 font-medium absolute opacity-100 right-0 duration-300",
   );
+  const { i18n } = useTranslation();
+  const [isPending, startTransition] = useTransition();
+  const { language } = i18n;
 
   const handleClick = (lang: string) => {
-    if (lang === activeLang && !isOpen) {
+    if (!isOpen) {
       setOpen(true);
 
       return;
     }
 
-    setActiveLang(lang);
-    setOpen(false);
+    const pathArr = pathname?.split("/");
+    const newPath = pathArr
+      ?.filter((path) => {
+        if (path === "") return false;
+        return !i18n.languages.some((language) => path === language);
+      })
+      .join("/");
+
+    startTransition(() => {
+      window.history.pushState({}, "", `/${lang}${newPath}`);
+
+      i18n.changeLanguage(lang);
+      setOpen(false);
+    });
   };
 
-  const filteredLanguages = languages.filter((lang) => lang !== activeLang);
-  filteredLanguages.unshift(activeLang);
+  const filteredLanguages = languages.filter((lang) => lang !== language);
+  filteredLanguages.unshift(language);
 
   return (
     <div className="hidden lg:flex flex-row-reverse gap-3 relative w-[272px]">
       {filteredLanguages.map((lang, index) => {
         const btnClasses = clsx(buttonClasses, {
           "opacity-100": index === 0,
-          "right-1/2 translate-x-1/2 opacity-100 right-[unset]":
-            isOpen && index === 1,
+          "right-1/2 translate-x-1/2 opacity-100": isOpen && index === 1,
           "right-full translate-x-full opacity-100": isOpen && index === 2,
-          "z-[10]": lang === activeLang,
+          "z-[10]": lang === language,
           "right-0": !isOpen,
         });
 

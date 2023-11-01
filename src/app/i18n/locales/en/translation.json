@@ -1,0 +1,65 @@
+{
+  "answers": {
+    "description": "For questions and a richer experience, download Onsual now",
+    "title": "Answers in Onsual"
+  },
+  "daily-reward-title": "Daily reward fund",
+  "download-now": "Download now",
+  "download-now-subtitle": "Get Onsual on App Store and Google Play",
+  "faq": {
+    "description": "Everything you need to know. Answers to frequently asked questions",
+    "title": "FAQ"
+  },
+  "features": {
+    "1": {
+      "description": "You can participate in quizzes anytime you want",
+      "title": "No timelines"
+    },
+    "2": {
+      "description": "More than million unique questions every day",
+      "title": "Unique questions"
+    },
+    "3": {
+      "description": "No specific knowledge is needed to answer most of the question",
+      "title": "No knowdledge needed"
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}} Onsual. All rights reserved.",
+    "message": "From Azerbaijan with love ❤\uFE0F"
+  },
+  "get-started": "GET STARTED WITH <span class=\"text-light-brand-primary lg:text-dark-brand-primary transition-all\"> ONSUAL",
+  "get-started-subtitle": "Play anytime, win every time: Join Onsual's contests for various rewards",
+  "guides": {
+    "title": "Onsual in 4 steps",
+    "register": {
+      "description": "Simplified registration via your mobile number",
+      "inputlabel": "Enter your mobile number",
+      "title": "Register"
+    },
+    "participation": {
+      "title": "Participate",
+      "description": "Participate in daily quizzes to earn points"
+    },
+    "leaderboard": {
+      "title": "Leaderboard",
+      "description": "Climb the leaderboard as you earn points"
+    },
+    "victory": {
+      "title": "Victory",
+      "description": "Ascend the leaderboard and unlock various rewards",
+      "win": {
+        "title": "Congratulations!",
+        "description": "You earned: 100AZN"
+      }
+    }
+  },
+  "question": "Question",
+  "statistics": {
+    "daily-questions": "Daily questions",
+    "title": "Highlights",
+    "users": "Users",
+    "winners": "Winners"
+  },
+  "why-onsual": "Why Onsual?"
+}

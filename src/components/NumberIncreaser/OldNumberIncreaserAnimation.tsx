@@ -27,8 +27,6 @@ const NumberIncreaserAnimation = ({
   useEffect(() => {
     let timer: NodeJS.Timeout;
 
-    console.log({ isStopped });
-
     if (!isStopped) {
       timer = setInterval(() => {
         iterations++;

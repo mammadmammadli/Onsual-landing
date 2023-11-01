@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Screen from "@/app/home/sections/cover/demo/screen";
+import Screen from "@/app/[lang]/home/sections/cover/demo/screen";
 
 const Demo = () => {
   return (

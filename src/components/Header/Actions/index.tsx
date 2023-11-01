@@ -4,9 +4,11 @@ import LanguageSwitcher from "@/components/Header/Actions/LanguageSwitcher";
 import Button from "@/components/Button";
 import IconButton from "@/components/Button/IconButton";
 import { useTheme } from "next-themes";
+import { useTranslation } from "@/app/i18n/client";
 
 const HeaderActions = () => {
   const { theme, setTheme } = useTheme();
+  const {t} = useTranslation()
 
   return (
     <div className="flex gap-3">
@@ -21,7 +23,9 @@ const HeaderActions = () => {
           }}
         />
       </div>
-      <Button mode="dark" className="pl-4 pr-4 py-[10px]">İndi yüklə</Button>
+      <Button mode="dark" className="pl-4 pr-4 py-[10px]">
+        {t("download-now")}
+      </Button>
     </div>
   );
 };
