@@ -11,7 +11,7 @@ const Logo = ({ containerClassName = "" }: LogoProps) => {
   return (
     <div className={containerClasses}>
       <Image
-        src="/images/logo.png"
+        src="/images/logo.svg"
         alt="Onsual logo"
         fill
         priority

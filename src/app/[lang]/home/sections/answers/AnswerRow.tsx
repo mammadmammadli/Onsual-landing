@@ -2,7 +2,7 @@ import Marquee from "react-fast-marquee";
 
 const AnswerItem = ({ answer }: { answer: string }) => {
   return (
-    <div className="mx-2 lg:mx-4 px-6 py-4 bg-light-surface-low dark:bg-dark-surface-low rounded-full flex items-center justify-center transition-all w-max">
+    <div className="mx-2 lg:mx-4 px-6 py-4 bg-light-surface-medium dark:bg-dark-surface-medium rounded-full flex items-center justify-center transition-all w-max">
       <span className="text-lg text-light-utility-high dark:text-dark-utility-high transition-all">
         {answer}
       </span>
@@ -17,7 +17,7 @@ type AnswerRowProps = {
 
 const AnswerRow = ({ answers, direction = "right" }: AnswerRowProps) => {
   return (
-    <Marquee speed={50} direction={direction}>
+    <Marquee speed={50} direction={direction} pauseOnHover>
       {answers.map((answer, i) => {
         return <AnswerItem answer={answer} key={i} />;
       })}
