@@ -14,10 +14,10 @@ const Hamburger = () => {
 
   return (
     <>
-      <AnimatePresence>
+      <AnimatePresence mode="popLayout" presenceAffectsLayout={true}>
         {isOpen && (
           <motion.div
-            className="h-screen w-screen fixed top-0 left-0 z-0 bg-light-source-opacity-black dark:bg-dark-source-opacity-black transition-all"
+            className="h-screen w-screen fixed top-0 left-0 z-0 bg-light-source-opacity-black dark:bg-dark-source-opacity-black"
             initial={{
               opacity: 0,
             }}

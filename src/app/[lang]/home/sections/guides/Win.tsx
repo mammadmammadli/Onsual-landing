@@ -89,7 +89,7 @@ const Win = () => {
         </span>
       </div>
 
-      <div className="bg-light-background-primary dark:bg-dark-background-primary flex-1 rounded-2xl flex items-center justify-center overflow-hidden relative">
+      <div className="bg-light-background-primary dark:bg-dark-background-primary flex-1 rounded-2xl flex items-center justify-center overflow-hidden relative transition-all">
         <motion.div>
           <div className="overflow-hidden">
             <motion.span
