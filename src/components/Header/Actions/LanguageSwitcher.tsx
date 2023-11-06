@@ -55,9 +55,10 @@ const LanguageSwitcher = () => {
           "opacity-100": index === 0,
           "right-1/2 translate-x-1/2 opacity-100": isOpen && index === 1,
           "right-full translate-x-full opacity-100": isOpen && index === 2,
+          "opacity-0": !isOpen && (index === 1 || index === 2),
           "z-[10]": lang === language,
           "right-0": !isOpen,
-          "pl-3 pr-4": device === "sm",
+          "pl-3 pr-4": device === "sm" || device === "md",
         });
 
         return (

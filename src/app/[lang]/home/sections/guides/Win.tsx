@@ -10,7 +10,6 @@ const Win = () => {
   const secondControl = useAnimationControls();
   const thirdControl = useAnimationControls();
   const { device } = useResponsive();
-  console.log({ device });
 
   const handleAnimationControl = () => {
     firstControl.set({
@@ -102,6 +101,7 @@ const Win = () => {
   };
 
   useEffect(() => {
+    resetAnimations();
     handleAnimationControl();
   }, [device]);
 
