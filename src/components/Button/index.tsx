@@ -70,6 +70,7 @@ const Button = forwardRef<Ref, MergedButtonProps>((props, ref) => {
         ref={ref}
         {...(mode === "transparent" && {
           style: {
+            WebkitBackdropFilter: 'blur(8px)',
             backdropFilter: 'blur(8px)'
           },
         })}

@@ -22,7 +22,7 @@ const HeaderActions = () => {
       <Button mode="dark" className="pl-4 pr-4 py-[10px]">
         {t("download-now")}
       </Button>
-      {device === "sm" && <Hamburger />}
+      {device === "md" || device === "sm" && <Hamburger />}
     </div>
   );
 };

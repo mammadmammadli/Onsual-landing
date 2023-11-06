@@ -3,11 +3,14 @@ import { motion, useAnimationControls } from "framer-motion";
 import Lottie from "lottie-react";
 import Confetti from "@/animations/confetti.json";
 import { useEffect } from "react";
+import useResponsive from "@/hooks/useResponsive";
 
 const Win = () => {
   const firstControl = useAnimationControls();
   const secondControl = useAnimationControls();
   const thirdControl = useAnimationControls();
+  const { device } = useResponsive();
+  console.log({ device });
 
   const handleAnimationControl = () => {
     firstControl.set({
@@ -29,15 +32,31 @@ const Win = () => {
       y: 0,
     });
 
-    thirdControl.set({
-      opacity: 0,
-      x: -120,
-    });
+    if (device) {
+      if (device === "sm" || device === "md") {
+        console.log(device);
+        thirdControl.set({
+          opacity: 0,
+          y: 40,
+        });
 
-    thirdControl.start({
-      opacity: 1,
-      x: 0,
-    });
+        thirdControl.start({
+          opacity: 1,
+          y: 0,
+        });
+      } else {
+        console.log(device);
+        thirdControl.set({
+          opacity: 0,
+          x: -120,
+        });
+
+        thirdControl.start({
+          opacity: 1,
+          x: 0,
+        });
+      }
+    }
   };
 
   const resetAnimations = () => {
@@ -47,8 +66,8 @@ const Win = () => {
         y: 40,
         transition: {
           delay: 1,
-          duration: 0.5
-        }
+          duration: 0.5,
+        },
       });
 
       secondControl.start({
@@ -60,20 +79,31 @@ const Win = () => {
         },
       });
 
-      thirdControl.start({
-        opacity: 0,
-        x: -120,
-        transition: {
-          delay: 0,
-          duration: 0.5,
-        }
-      })
+      if (device === "sm" || device === "md") {
+        thirdControl.start({
+          opacity: 0,
+          y: 40,
+          transition: {
+            delay: 0,
+            duration: 0.5,
+          },
+        });
+      } else {
+        thirdControl.start({
+          opacity: 0,
+          x: -120,
+          transition: {
+            delay: 0,
+            duration: 0.5,
+          },
+        });
+      }
     }, 8000);
   };
 
   useEffect(() => {
     handleAnimationControl();
-  }, []);
+  }, [device]);
 
   return (
     <div className="transition-all p-6 lg:p-8 lg:rounded-[32px] rounded-[24px] flex flex-col gap-4 bg-light-surface-high dark:bg-dark-surface-high h-[396px] lg:h-[412px]">
@@ -103,18 +133,20 @@ const Win = () => {
               Təbrik edirik!
             </motion.span>
           </div>
-          <div className="overflow-hidden flex items-center">
-            <motion.span
-              animate={secondControl}
-              transition={{
-                delay: 0.5,
-                duration: 0.5,
-              }}
-              className="text-3xl text-light-utility-high dark:text-dark-utility-high inline-block"
-            >
-              Müfakat məbləği: &nbsp;
-            </motion.span>
-            <div className="inline-block overflow-hidden">
+          <div className="overflow-hidden lg:flex items-center">
+            <div className="overflow-hidden">
+              <motion.span
+                animate={secondControl}
+                transition={{
+                  delay: 0.5,
+                  duration: 0.5,
+                }}
+                className="text-3xl text-light-utility-high dark:text-dark-utility-high inline-block"
+              >
+                Müfakat məbləği: &nbsp;
+              </motion.span>
+            </div>
+            <div className="block lg:inline-block overflow-hidden text-center">
               <motion.span
                 className="text-3xl text-light-brand-primary dark:text-dark-brand-primary inline-block font-bold"
                 animate={thirdControl}
