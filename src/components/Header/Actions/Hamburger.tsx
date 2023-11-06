@@ -14,7 +14,7 @@ const Hamburger = () => {
 
   return (
     <>
-      <AnimatePresence mode="popLayout" presenceAffectsLayout={true}>
+      <AnimatePresence>
         {isOpen && (
           <motion.div
             className="h-screen w-screen fixed top-0 left-0 z-0 bg-light-source-opacity-black dark:bg-dark-source-opacity-black"
