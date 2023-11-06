@@ -64,7 +64,16 @@ const Button = forwardRef<Ref, MergedButtonProps>((props, ref) => {
 
   if (isButton(restProps)) {
     return (
-      <button className={classes} {...restProps} ref={ref}>
+      <button
+        className={classes}
+        {...restProps}
+        ref={ref}
+        {...(mode === "transparent" && {
+          style: {
+            backdropFilter: 'blur(8px)'
+          },
+        })}
+      >
         {children}
       </button>
     );

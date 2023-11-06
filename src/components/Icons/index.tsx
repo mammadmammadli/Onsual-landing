@@ -16,6 +16,7 @@ import Close from "@/components/Icons/Close";
 import Star from "@/components/Icons/Star";
 import QuizRectangle from "@/components/Icons/QuizRectangle";
 import Chevron from "@/components/Icons/Chevron";
+import Hamburger from "@/components/Icons/Hamburger";
 
 export type IconNames =
   | "apple"
@@ -36,6 +37,7 @@ export type IconNames =
   | "light"
   | "close"
   | "medal"
+  | "hamburger"
   | "star"
   | "quiz-rectangle";
 
@@ -94,6 +96,8 @@ const Icon = (props: IconProps) => {
       return <Chevron {...props} direction="down" />;
     case "iphone-actions":
       return <IphoneActions mode="dark" {...props} />;
+    case "hamburger":
+      return <Hamburger {...props} />;
     default:
       return null;
   }
