@@ -10,19 +10,8 @@ import FooterCopyRight from "@/components/Footer/CopyRight";
 const Footer = () => {
   return (
     <footer>
-      <Container>
+      <Container className="lg:px-[64px]">
         <div className="flex flex-col gap-[64px] lg:gap-[120px] pb-8 lg:pb-[56px]">
-          <div className="flex flex-col md:flex-row justify-between gap-6 lg:gap-0">
-            <Link href="/">
-              <Logo containerClassName="h-8 w-[134px]" />
-            </Link>
-
-            <div className="flex gap-3">
-              <AppleStore />
-              <GooglePlay />
-            </div>
-          </div>
-
           <div className="flex justify-between flex-col md:flex-row gap-[64px] md:gap-0">
             <Address />
             <Navigations />

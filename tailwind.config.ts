@@ -108,7 +108,10 @@ const config: Config = {
           },
           source: {
             opacity: {
-              black: "rgba(0, 0, 0, 0.64)",
+              black: {
+                "0.5": "rgba(0, 0, 0, 0.5)",
+                "0.64": "rgba(0, 0, 0, 0.64)",
+              },
             },
             black: "#000000",
             container: {
@@ -156,7 +159,10 @@ const config: Config = {
           },
           source: {
             opacity: {
-              black: "rgba(0, 0, 0, 0.64)",
+              black: {
+                "0.5": "rgba(0, 0, 0, 0.5)",
+                "0.64": "rgba(0, 0, 0, 0.64)",
+              },
             },
             black: "#000000",
             container: {

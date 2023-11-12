@@ -19,7 +19,7 @@ const HeaderActions = () => {
       <div className="hidden lg:block">
         <LightModeSwitcher />
       </div>
-      <Button mode="dark" className="pl-4 pr-4 py-[10px]">
+      <Button mode="dark" className="pl-4 pr-4 py-[10px] font-medium">
         {t("download-now")}
       </Button>
       {(device === "md" || device === "sm") && <Hamburger />}

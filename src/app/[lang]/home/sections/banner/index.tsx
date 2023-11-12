@@ -16,7 +16,7 @@ const Banner = () => {
                   ELƏ İNDİ YÜKLƏ!
                 </h3>
 
-                <span className="text-lg text-light-source-white dark:text-dark-source-white transition-all font-normal">
+                <span className="text-lg text-light-source-white dark:text-dark-source-white transition-all font-normal text-center lg:text-start">
                   Onsualı istifadə etmək üçün mobil tətbiqi Apple Store və ya
                   Google Play-dən yükləyin
                 </span>

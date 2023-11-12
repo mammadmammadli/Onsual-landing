@@ -19,7 +19,7 @@ const secondAnimationMapper: {
   lg: [null, "calc(-100% + 180px)", "calc(-100% + 140px)"],
   xl: [null, "calc(-100% + 180px)", "calc(-100% + 140px)"],
   "2xl": [null, "calc(-100% + 180px)", "calc(-100% + 140px)"],
-}
+};
 
 const thirdAnimationMapper: {
   [key: string]: any;
@@ -29,7 +29,7 @@ const thirdAnimationMapper: {
   lg: [null, "calc(-100% + 160px)", "calc(-100% + 140px)"],
   xl: [null, "calc(-100% + 160px)", "calc(-100% + 140px)"],
   "2xl": [null, "calc(-100% + 160px)", "calc(-100% + 140px)"],
-}
+};
 
 const NumberIncrease = () => {
   const { device } = useResponsive();
@@ -40,14 +40,8 @@ const NumberIncrease = () => {
         {device && (
           <>
             <Increaser length={2} y={firstAnimationMapper[device]} />
-            <Increaser
-              length={11}
-              y={secondAnimationMapper[device]}
-            />
-            <Increaser
-              length={101}
-              y={thirdAnimationMapper[device]}
-            />
+            <Increaser length={11} y={secondAnimationMapper[device]} />
+            <Increaser length={101} y={thirdAnimationMapper[device]} />
           </>
         )}
       </div>

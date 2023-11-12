@@ -63,7 +63,7 @@ const NumberIncreaser = ({ length, y }: Props) => {
         <motion.div
           inherit={false}
           key="first"
-          className="flex flex-col items-center lg:gap-8"
+          className="flex flex-col items-end lg:gap-8"
           initial={{
             y: "0",
           }}

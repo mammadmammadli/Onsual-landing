@@ -33,7 +33,6 @@ const Win = () => {
 
     if (device) {
       if (device === "sm" || device === "md") {
-        console.log(device);
         thirdControl.set({
           opacity: 0,
           y: 40,
@@ -44,7 +43,6 @@ const Win = () => {
           y: 0,
         });
       } else {
-        console.log(device);
         thirdControl.set({
           opacity: 0,
           x: -120,

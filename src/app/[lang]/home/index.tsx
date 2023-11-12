@@ -14,6 +14,7 @@ import DownloadApp from "@/app/[lang]/home/components/DownloadApp";
 import { useEffect, useState } from "react";
 import { debounce } from "next/dist/server/utils";
 import { getCookie, setCookie } from "cookies-next";
+import Modal from "@/components/Modal";
 
 const HomePage = () => {
   const { activeLottie, setActiveLottie, clearActiveLottie } = useLottie();
@@ -50,6 +51,7 @@ const HomePage = () => {
       <Answers />
       <FAQ />
       <Banner />
+      {/* <Modal /> */}
       <DownloadApp
         onClose={() => setIsDownloadAppOpen(false)}
         isOpen={isDownloadAppOpen}

@@ -17,7 +17,7 @@ const Hamburger = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="h-screen w-screen fixed top-0 left-0 z-0 bg-light-source-opacity-black dark:bg-dark-source-opacity-black"
+            className="h-screen w-screen fixed top-0 left-0 z-0 bg-light-source-opacity-black-0.64 dark:bg-dark-source-opacity-black-0.64"
             initial={{
               opacity: 0,
             }}
