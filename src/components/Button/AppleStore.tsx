@@ -8,7 +8,7 @@ type Props = {
 };
 
 const AppleStore = ({ className, mode = "dark" }: Props) => {
-  const classes = clsx("flex gap-2 font-medium group", className);
+  const classes = clsx("flex gap-2 font-medium group z-1", className);
 
   const iconClasses = clsx("transition-all", {
     "dark:fill-light-utility-high fill-dark-utility-high group-hover:fill-light-source-white group-hover:dark:fill-dark-source-white":

@@ -4,12 +4,14 @@ import Lottie from "lottie-react";
 import Confetti from "@/animations/confetti.json";
 import { useEffect } from "react";
 import useResponsive from "@/hooks/useResponsive";
+import { useTranslation } from "@/app/i18n/client";
 
 const Win = () => {
   const firstControl = useAnimationControls();
   const secondControl = useAnimationControls();
   const thirdControl = useAnimationControls();
   const { device } = useResponsive();
+  const { t } = useTranslation();
 
   const handleAnimationControl = () => {
     firstControl.set({
@@ -56,50 +58,7 @@ const Win = () => {
     }
   };
 
-  const resetAnimations = () => {
-    setTimeout(() => {
-      firstControl.start({
-        opacity: 0,
-        y: 40,
-        transition: {
-          delay: 1,
-          duration: 0.5,
-        },
-      });
-
-      secondControl.start({
-        opacity: 0,
-        y: 40,
-        transition: {
-          delay: 0.5,
-          duration: 0.5,
-        },
-      });
-
-      if (device === "sm" || device === "md") {
-        thirdControl.start({
-          opacity: 0,
-          y: 40,
-          transition: {
-            delay: 0,
-            duration: 0.5,
-          },
-        });
-      } else {
-        thirdControl.start({
-          opacity: 0,
-          x: -120,
-          transition: {
-            delay: 0,
-            duration: 0.5,
-          },
-        });
-      }
-    }, 8000);
-  };
-
   useEffect(() => {
-    resetAnimations();
     handleAnimationControl();
   }, [device]);
 
@@ -109,11 +68,10 @@ const Win = () => {
 
       <div className="flex flex-col gap-2">
         <span className="font-medium text-2xl text-light-utility-high dark:text-dark-utility-high">
-          Mükafat qazan
+          {t("guides.victory.title")}
         </span>
         <span className="font-normal text-lg text-light-utility-medium dark:text-dark-utility-medium">
-          Yr pin narwhal poutine readymade tile semiotics on santo viral. Tumblr
-          tumeric plant disrupt sriracha chicken.
+          {t("guides.victory.description")}
         </span>
       </div>
 
@@ -126,9 +84,8 @@ const Win = () => {
               transition={{
                 duration: 0.5,
               }}
-              onAnimationComplete={resetAnimations}
             >
-              Təbrik edirik!
+              {t("guides.victory.win.title")}
             </motion.span>
           </div>
           <div className="overflow-hidden lg:flex items-center">
@@ -141,7 +98,7 @@ const Win = () => {
                 }}
                 className="text-3xl text-light-utility-high dark:text-dark-utility-high inline-block"
               >
-                Müfakat məbləği: &nbsp;
+                {t("guides.victory.win.description")} &nbsp;
               </motion.span>
             </div>
             <div className="block lg:inline-block overflow-hidden text-center">
@@ -158,7 +115,7 @@ const Win = () => {
             </div>
           </div>
         </motion.div>
-        <div className="absolute h-full w-full top-0 left-0 z-[9999] pointer-events-none">
+        <div className="absolute h-full w-full top-0 left-0 z-[1000] pointer-events-none">
           <Lottie
             className="h-full w-full"
             animationData={Confetti}

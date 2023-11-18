@@ -2,7 +2,7 @@ import Marquee from "react-fast-marquee";
 
 const AnswerItem = ({ answer }: { answer: string }) => {
   return (
-    <div className="mx-1 lg:mx-2 px-6 py-4 bg-light-surface-medium dark:bg-dark-surface-medium rounded-full flex items-center justify-center transition-all w-max">
+    <div className="mx-1 lg:mx-2 px-6 py-4 bg-light-surface-medium dark:bg-dark-surface-medium rounded-full flex items-center justify-center transition-all w-max cursor-default">
       <span className="text-lg text-light-utility-high dark:text-dark-utility-high transition-all">
         {answer}
       </span>

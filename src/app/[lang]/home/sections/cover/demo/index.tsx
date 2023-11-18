@@ -3,7 +3,7 @@ import Screen from "@/app/[lang]/home/sections/cover/demo/screen";
 
 const Demo = () => {
   return (
-    <div className="flex justify-center relative z-[0]">
+    <div className="flex justify-center relative z-[1]">
       <div className="h-[326px] w-[290px] relative">
         <div className="relative z-[2] pointer-events-none">
           <Image

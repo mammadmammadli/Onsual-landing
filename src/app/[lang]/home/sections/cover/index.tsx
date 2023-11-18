@@ -5,12 +5,13 @@ import Demo from "@/app/[lang]/home/sections/cover/demo";
 import AppleStore from "@/components/Button/AppleStore";
 import GooglePlay from "@/components/Button/GooglePlay";
 import { useTranslation } from "@/app/i18n/client";
+import AnimatedEllipses from "../../components/AnimatedEllipses";
 
 const Cover = () => {
   const { t } = useTranslation();
 
   return (
-    <SectionWrapper>
+    <SectionWrapper classname="relative z-10">
       <Container>
         <div className="flex flex-col gap-2 mb-10 lg:mb-[64px]">
           <h1 className="font-bold text-light-utility-high dark:text-dark-utility-high transition-all text-4xl lg:text-7xl text-center">
@@ -22,8 +23,7 @@ const Cover = () => {
           </h1>
 
           <p className="text-light-utility-medium dark:text-dark-utility-medium transition-all text-xl text-center">
-            İstədiyin zaman oyna, oynadığın zaman qazan. Onsualın müsabiqələrinə
-            qoşulun və müxtəlif mükafatlar qazanın!
+            {t("get-started-subtitle")}
           </p>
 
           <div className="hidden lg:flex gap-3 justify-center mt-6">

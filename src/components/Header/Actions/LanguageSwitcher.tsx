@@ -5,9 +5,9 @@ import Image from "next/image";
 import { useState, useTransition } from "react";
 import { clsx } from "clsx";
 import { useTranslation } from "@/app/i18n/client";
-import { usePathname } from "next/navigation";
-import { useRouter } from "next/router";
+import { usePathname, useRouter } from "next/navigation";
 import useResponsive from "@/hooks/useResponsive";
+import Link from "next/link";
 
 const languages = ["en", "ru", "az"];
 
@@ -15,12 +15,13 @@ const LanguageSwitcher = () => {
   const pathname = usePathname();
   const [isOpen, setOpen] = useState(false);
   const buttonClasses = clsx(
-    "gap-2 items-center flex transition-all pl-4 font-medium absolute opacity-100 right-0 duration-300",
+    "transition-all pl-4 font-medium absolute right-0 duration-300 !absolute"
   );
   const { i18n } = useTranslation();
-  const [isPending, startTransition] = useTransition();
+  const [, startTransition] = useTransition();
   const { language } = i18n;
-  const {device} = useResponsive()
+  const { device } = useResponsive();
+  const router = useRouter();
 
   const handleClick = (lang: string) => {
     if (!isOpen) {
@@ -38,7 +39,8 @@ const LanguageSwitcher = () => {
       .join("/");
 
     startTransition(() => {
-      window.history.pushState({}, "", `/${lang}${newPath}`);
+      router.push(`/${lang}${newPath}`);
+      // window.history.pushState({}, "", `/${lang}${newPath}`);
 
       i18n.changeLanguage(lang);
       setOpen(false);
@@ -69,22 +71,24 @@ const LanguageSwitcher = () => {
               handleClick(lang);
             }}
           >
-            <div className="relative h-5 w-5">
-              <Image
-                src={`/images/flags/${lang}.svg`}
-                alt={`en lang`}
-                fill
-                priority
-              />
+            <div className="flex gap-2 items-center">
+              <div className="relative h-5 w-5">
+                <Image
+                  src={`/images/flags/${lang}.svg`}
+                  alt={`en lang`}
+                  fill
+                  priority
+                />
+              </div>
+              <span className="text-base uppercase text-light-utility-high dark:text-dark-utility-high transition-all">
+                {lang}
+              </span>
             </div>
-            <span className="text-base uppercase text-light-utility-high dark:text-dark-utility-high transition-all">
-              {lang}
-            </span>
           </Button>
         );
       })}
     </div>
-  )
+  );
 };
 
 export default LanguageSwitcher;

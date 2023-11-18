@@ -15,6 +15,8 @@ import { useEffect, useState } from "react";
 import { debounce } from "next/dist/server/utils";
 import { getCookie, setCookie } from "cookies-next";
 import Modal from "@/components/Modal";
+import Counter from "@/components/Counter";
+import AnimatedEllipses from "./components/AnimatedEllipses";
 
 const HomePage = () => {
   const { activeLottie, setActiveLottie, clearActiveLottie } = useLottie();
@@ -43,7 +45,8 @@ const HomePage = () => {
   }, [setIsDownloadAppOpen, isDownloadAppOpen]);
 
   return (
-    <div className="pb-[36px] lg:pb-[100px] pt-[100px] lg:pt-5">
+    <div className="pb-[36px] lg:pb-[100px] pt-[100px] lg:pt-5 relative">
+      <AnimatedEllipses />
       <Cover />
       <Guides />
       <Amount />

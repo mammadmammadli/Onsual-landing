@@ -17,11 +17,13 @@ import Star from "@/components/Icons/Star";
 import QuizRectangle from "@/components/Icons/QuizRectangle";
 import Chevron from "@/components/Icons/Chevron";
 import Hamburger from "@/components/Icons/Hamburger";
+import Ellipse from "./Ellipse";
 
 export type IconNames =
   | "apple"
   | "google-play"
   | "moon"
+  | "ellipse"
   | "chevron-down"
   | "sun"
   | "bar-chart"
@@ -98,6 +100,8 @@ const Icon = (props: IconProps) => {
       return <IphoneActions mode="dark" {...props} />;
     case "hamburger":
       return <Hamburger {...props} />;
+    case "ellipse":
+      return <Ellipse />;
     default:
       return null;
   }

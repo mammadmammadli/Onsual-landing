@@ -3,10 +3,12 @@ import { Reorder } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { leaderBoardScorersMapper, usersMapper } from "./const";
+import { useTranslation } from "@/app/i18n/client";
 
 let handler: NodeJS.Timeout;
 
 const Rating = () => {
+  const { t } = useTranslation();
   const [order, setOrder] = useState<{
     order: Array<{
       orderKey: keyof typeof usersMapper;
@@ -52,10 +54,10 @@ const Rating = () => {
 
       <div className="flex flex-col gap-2">
         <span className="font-medium text-2xl text-light-utility-high dark:text-dark-utility-high">
-          Sıralama
+          {t("guides.leaderboard.title")}
         </span>
         <span className="font-normal text-lg text-light-utility-medium dark:text-dark-utility-medium">
-          Yığdığını xallara uyğun olaraq sıralamada müvafiq yerləri tutun
+          {t("guides.leaderboard.description")}
         </span>
       </div>
       <div className="flex-1 rounded-2xl bg-light-background-primary dark:bg-dark-background-primary px-7 lg:px-[60px] pt-[36px] overflow-hidden transition-all">

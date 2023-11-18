@@ -28,7 +28,7 @@
     "copyright": "© {{year}} Onsual, bütün hüquqlar qorunur",
     "message": "Azərbaycandan sevgilərlə ❤\uFE0F"
   },
-  "get-started": "<span class=\"block lg:inline\">SİZƏ</span><span class=\"text-light-brand-primary lg:text-dark-brand-primary transition-all\"> ONSUALIMIZ </span> VAR",
+  "get-started": "<span class=\"block lg:inline-block\">SİZƏ</span><span class=\"text-light-brand-primary lg:text-dark-brand-primary transition-all\"> ONSUALIMIZ </span> VAR",
   "get-started-subtitle": "İstədiyin zaman oyna, oynadığın zaman qazan. Onsualın müsabiqələrinə qoşulun və müxtəlif mükafatlar qazanın!",
   "guides": {
     "title": "4 ADDIMDA ONSUAL",
@@ -50,7 +50,7 @@
       "description": "Qaliblər sıralarında yer alaraq, tutduğunuz yerə uyğun müxtəlif mükafatlar qazanın",
       "win": {
         "title": "Təbrik edirik!",
-        "description": "Müfakat məbləği: 100AZN"
+        "description": "Müfakat məbləği:"
       }
     }
   },

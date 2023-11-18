@@ -50,7 +50,7 @@
       "description": "Поднимитесь в таблице лидеров и получайте награды",
       "win": {
         "title": "Congratulations!",
-        "description": "You earned: 100AZN"
+        "description": "You earned:"
       }
     }
   },

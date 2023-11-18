@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/lodash": "^4.14.201",
     "accept-language": "^3.0.18",
     "clsx": "^2.0.0",
     "cookies-next": "^4.0.0",

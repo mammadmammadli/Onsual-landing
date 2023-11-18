@@ -38,9 +38,9 @@ const Screen = () => {
   }, []);
 
   return (
-    <div className="absolute top-0 h-full bg-light-background-primary dark:bg-dark-background-primary transition-all w-[calc(100%-30px)] z-[1] left-[15px] rounded-[50px] pt-4 px-[10px]">
+    <div className="absolute top-0 h-[400px] bg-light-background-primary dark:bg-dark-background-primary transition-all w-[calc(100%-30px)] z-[1] left-[15px] rounded-[50px] pt-4 px-[10px]">
       <div className="flex justify-between items-center h-[30px]">
-        {minutes && hours && (
+        {minutes !== undefined && hours !== undefined && (
           <div className="pl-[14px]">
             <span className="text-light-utility-high dark:text-dark-utility-high text-xs font-semibold">
               {hours > 12 ? hours - 12 : hours}:
@@ -62,7 +62,7 @@ const Screen = () => {
           icon="close"
           size="sm"
           iconClassName="fill-light-utility-low dark:fill-dark-utility-low"
-          className="!bg-light-surface-high dark:!bg-dark-surface-high pl-2 pt-2 pr-2 pb-2"
+          className="!bg-light-surface-high dark:!bg-dark-surface-high pl-2 pt-2 pr-2 pb-2 hover:!bg-light-surface-medium dark:hover:!bg-dark-surface-medium"
         />
 
         <div className="p-2 bg-light-surface-high dark:bg-dark-surface-high transition-all rounded-full gap-1 flex">
