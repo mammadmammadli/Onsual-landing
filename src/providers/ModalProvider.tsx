@@ -6,7 +6,7 @@ type ModalProviderProps = PropsWithChildren;
 
 export const ModalContext = createContext({
   isOpen: false,
-  onOpen: (_: boolean) => {},
+  onOpen: () => {},
   onClose: () => {},
 });
 
@@ -21,11 +21,7 @@ const ModalProvider = ({ children }: ModalProviderProps) => {
         onClose: () => setIsOpen(false),
       }}
     >
-      {isOpen && (
-        <AnimatePresence mode="wait">
-          <Modal />
-        </AnimatePresence>
-      )}
+      <AnimatePresence mode="wait">{isOpen && <Modal />}</AnimatePresence>
       {children}
     </ModalContext.Provider>
   );

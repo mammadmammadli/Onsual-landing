@@ -16,11 +16,13 @@ import { debounce } from "next/dist/server/utils";
 import { getCookie, setCookie } from "cookies-next";
 import AnimatedEllipses from "./components/AnimatedEllipses";
 import useModal from "@/hooks/useModal";
+import useDeviceType from "@/hooks/useDeviceType";
 
 const HomePage = () => {
-  const { activeLottie, setActiveLottie, clearActiveLottie } = useLottie();
+  const { activeLottie, clearActiveLottie } = useLottie();
   const [isDownloadAppOpen, setIsDownloadAppOpen] = useState(false);
   const { onOpen } = useModal();
+  const { deviceType } = useDeviceType();
 
   useEffect(() => {
     const isDownloadAppOpenCookie = getCookie("download-app-open");
@@ -30,7 +32,12 @@ const HomePage = () => {
       listener = debounce(() => {
         if (window.scrollY > 1000) {
           setCookie("download-app-open", true, { maxAge: 60 * 60 * 24 });
-          setIsDownloadAppOpen(true);
+
+          if (deviceType === "unknown") {
+            onOpen();
+          } else {
+            setIsDownloadAppOpen(true);
+          }
         }
       }, 500);
 
@@ -42,14 +49,7 @@ const HomePage = () => {
         window.removeEventListener("scroll", listener);
       }
     };
-  }, [setIsDownloadAppOpen, isDownloadAppOpen]);
-
-  useEffect(() => {
-    setTimeout(() => {
-      console.log("lol")
-      onOpen(true);
-    }, 1000);
-  }, []);
+  }, [setIsDownloadAppOpen, onOpen, isDownloadAppOpen, deviceType]);
 
   return (
     <div className="pb-[36px] lg:pb-[100px] pt-[100px] lg:pt-5 relative">

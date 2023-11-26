@@ -1,7 +1,27 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import ModalBody from "./ModalBody";
+import { useCallback, useEffect } from "react";
+import useModal from "@/hooks/useModal";
 
 const ModalLayer = () => {
+  const { onClose } = useModal();
+  const keydownHandler = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    },
+    [onClose]
+  );
+
+  useEffect(() => {
+    window.addEventListener("keydown", keydownHandler);
+
+    return () => {
+      window.removeEventListener("keydown", keydownHandler);
+    };
+  }, [keydownHandler]);
+
   return (
     <motion.div
       layout
