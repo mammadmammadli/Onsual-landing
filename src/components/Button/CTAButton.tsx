@@ -1,7 +1,6 @@
 import Button from "@/components/Button/index";
-import { LinkProps } from "next/link";
 
-type CTAButtonProps = LinkProps & {
+type CTAButtonProps = {
   href: string;
 };
 
