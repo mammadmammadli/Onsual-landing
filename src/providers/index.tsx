@@ -3,6 +3,7 @@
 import { PropsWithChildren, useEffect, useState } from "react";
 import { ThemeProvider } from "next-themes";
 import LottieProvider from "@/providers/LottieProvider";
+import ModalProvider from "./ModalProvider";
 
 type ProvidersProps = PropsWithChildren;
 
@@ -19,7 +20,9 @@ const Providers = ({ children }: ProvidersProps) => {
 
   return (
     <ThemeProvider attribute="class">
-      <LottieProvider>{children}</LottieProvider>
+      <LottieProvider>
+        <ModalProvider>{children}</ModalProvider>
+      </LottieProvider>
     </ThemeProvider>
   );
 };

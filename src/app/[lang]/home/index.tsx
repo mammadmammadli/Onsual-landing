@@ -14,13 +14,13 @@ import DownloadApp from "@/app/[lang]/home/components/DownloadApp";
 import { useEffect, useState } from "react";
 import { debounce } from "next/dist/server/utils";
 import { getCookie, setCookie } from "cookies-next";
-import Modal from "@/components/Modal";
-import Counter from "@/components/Counter";
 import AnimatedEllipses from "./components/AnimatedEllipses";
+import useModal from "@/hooks/useModal";
 
 const HomePage = () => {
   const { activeLottie, setActiveLottie, clearActiveLottie } = useLottie();
   const [isDownloadAppOpen, setIsDownloadAppOpen] = useState(false);
+  const { onOpen } = useModal();
 
   useEffect(() => {
     const isDownloadAppOpenCookie = getCookie("download-app-open");
@@ -44,6 +44,13 @@ const HomePage = () => {
     };
   }, [setIsDownloadAppOpen, isDownloadAppOpen]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      console.log("lol")
+      onOpen(true);
+    }, 1000);
+  }, []);
+
   return (
     <div className="pb-[36px] lg:pb-[100px] pt-[100px] lg:pt-5 relative">
       <AnimatedEllipses />
@@ -54,7 +61,6 @@ const HomePage = () => {
       <Answers />
       <FAQ />
       <Banner />
-      {/* <Modal /> */}
       <DownloadApp
         onClose={() => setIsDownloadAppOpen(false)}
         isOpen={isDownloadAppOpen}
