@@ -19,7 +19,7 @@ const AccordionItem = ({
     "rounded-3xl p-5 lg:px-6 lg:py-[26px] bg-light-surface-high dark:bg-dark-surface-high transition-all cursor-pointer",
     {
       "pb-5": isOpen,
-    },
+    }
   );
 
   return (
@@ -51,9 +51,12 @@ const AccordionItem = ({
         }}
       >
         <div className="p-4 bg-light-surface-medium dark:bg-dark-surface-medium rounded-2xl mt-4 transition-all">
-          <span className="text-lg text-light-utility-high dark:text-dark-utility-high">
-            {answer}
-          </span>
+          <span
+            className="text-lg text-light-utility-high dark:text-dark-utility-high"
+            dangerouslySetInnerHTML={{
+              __html: answer,
+            }}
+          />
         </div>
       </motion.div>
     </div>

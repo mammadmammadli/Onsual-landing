@@ -3,7 +3,6 @@ import Container from "@/components/Container";
 import Accordion from "@/components/Accordion";
 import { frequentAskedQuestions } from "@/data/faq";
 import { useTranslation } from "@/app/i18n/client";
-import IconButton from "@/components/Button/IconButton";
 
 const FAQ = () => {
   const {
