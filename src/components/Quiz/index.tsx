@@ -38,8 +38,8 @@ const Quiz = ({ lottieSection, isPaused = false }: Props) => {
               onComplete: () => {
                 return {
                   shouldRepeat: true,
-                }
-              }
+                };
+              },
             }}
           />
         </div>
@@ -52,7 +52,7 @@ const Quiz = ({ lottieSection, isPaused = false }: Props) => {
         <span className="font-medium text-sm text-light-utility-medium dark:text-dark-utility-medium transition-all">
           {t("question")} 10/10
         </span>
-        <span className={descriptionClass}>Niyə Onsual?</span>
+        <span className={descriptionClass}>{t("quiz.question")}</span>
       </div>
       <div className="px-3 pt-4 bg-light-surface-high dark:bg-dark-surface-high transition-all">
         <div className="flex flex-col gap-1">
@@ -64,7 +64,7 @@ const Quiz = ({ lottieSection, isPaused = false }: Props) => {
             className="rounded-xl p-3 cursor-pointer bg-light-surface-medium dark:bg-dark-surface-medium hover:bg-light-surface-low hover:dark:bg-dark-surface-low flex items-center transition-all"
           >
             <span className="font-medium text-sm text-light-utility-high dark:text-dark-utility-high transition-all">
-              Mükafat qazanırsan
+              {t("quiz.answer-1")}
             </span>
           </div>
           <div
@@ -75,7 +75,7 @@ const Quiz = ({ lottieSection, isPaused = false }: Props) => {
             className="rounded-xl p-3 cursor-pointer bg-light-surface-medium dark:bg-dark-surface-medium hover:bg-light-surface-low hover:dark:bg-dark-surface-low flex items-center transition-all"
           >
             <span className="font-medium text-sm text-light-utility-high dark:text-dark-utility-high transition-all">
-              Xoş vaxt keçirdirsən
+              {t("quiz.answer-2")}
             </span>
           </div>
           <div
@@ -86,7 +86,7 @@ const Quiz = ({ lottieSection, isPaused = false }: Props) => {
             className="rounded-xl p-3 cursor-pointer bg-light-surface-medium dark:bg-dark-surface-medium hover:bg-light-surface-low hover:dark:bg-dark-surface-low flex items-center transition-all"
           >
             <span className="font-medium text-sm text-light-utility-high dark:text-dark-utility-high transition-all">
-              Xoş vaxt keçirdirsən
+              {t("quiz.answer-2")}
             </span>
           </div>
         </div>

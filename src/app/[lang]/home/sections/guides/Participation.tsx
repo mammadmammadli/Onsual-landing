@@ -17,7 +17,7 @@ const Participation = () => {
         <span className="font-medium text-2xl text-light-utility-high dark:text-dark-utility-high">
           {t("guides.participation.title")}
         </span>
-        <div className="flex items-center flex-1">
+        <div className="flex flex-1">
           {" "}
           <span className="font-normal text-lg text-light-utility-medium dark:text-dark-utility-medium">
             {t("guides.participation.description")}

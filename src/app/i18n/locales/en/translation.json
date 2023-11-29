@@ -55,6 +55,11 @@
     }
   },
   "question": "Question",
+  "quiz": {
+    "question": "Why Onsual?",
+    "answer-1": "Earn rewards",
+    "answer-2": "Enjoy"
+  },
   "statistics": {
     "daily-questions": "Daily questions",
     "title": "Highlights",

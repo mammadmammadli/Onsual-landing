@@ -5,7 +5,7 @@
   },
   "daily-reward-title": "Gündəlik mükafat fondu",
   "download-now": "İndi yüklə",
-  "download-now-subtitle": "Onsualı istifadə etmək üçün mobil tətbiqi Apple Store və ya Google Play-dən yükləyin",
+  "download-now-subtitle": "Onsualı istifadə etmək üçün mobil tətbiqi Apple Store <br /> və ya Google Play-dən yükləyin",
   "faq": {
     "description": "İstifadəçilərimizin Onsual tətbiqini istifadə etdiyi zaman ən çox veridiyi suallar",
     "title": "ƏN ÇOX VERİLƏN SUALLAR"
@@ -55,6 +55,11 @@
     }
   },
   "question": "Sual",
+  "quiz": {
+    "question": "Niyə Onsual?",
+    "answer-1": "Mükafat qazanırsan",
+    "answer-2": "Xoş vaxt keçirdirsən"
+  },
   "statistics": {
     "daily-questions": "Gündəlik sual sayı",
     "title": "RƏQƏMLƏRLƏ BİZ",

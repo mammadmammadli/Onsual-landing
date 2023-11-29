@@ -3,8 +3,11 @@ import Container from "@/components/Container";
 import AppleStore from "@/components/Button/AppleStore";
 import GooglePlay from "@/components/Button/GooglePlay";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 const Banner = () => {
+  const { t } = useTranslation();
+
   return (
     <SectionWrapper>
       <Container>
@@ -13,13 +16,15 @@ const Banner = () => {
             <div className="max-w-[544px] flex flex-col gap-4 lg:gap-6">
               <div className="flex flex-col gap-2 items-center lg:items-start">
                 <h3 className="text-3xl lg:text-5xl text-light-source-white dark:text-dark-source-white font-bold	transition-all">
-                  ELƏ İNDİ YÜKLƏ!
+                  {t("download-now")}
                 </h3>
 
-                <span className="text-lg text-light-source-white dark:text-dark-source-white transition-all font-normal text-center lg:text-start">
-                  Onsualı istifadə etmək üçün mobil tətbiqi Apple Store və ya
-                  Google Play-dən yükləyin
-                </span>
+                <span
+                  className="text-lg text-light-source-white dark:text-dark-source-white transition-all font-normal text-center lg:text-start"
+                  dangerouslySetInnerHTML={{
+                    __html: t("download-now-subtitle"),
+                  }}
+                />
               </div>
 
               <div className="flex gap-3 justify-center lg:justify-start">
