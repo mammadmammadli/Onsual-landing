@@ -20,7 +20,7 @@ const FAQ = () => {
             <h3 className="text-3xl lg:text-5xl font-bold text-light-utility-high dark:text-dark-utility-high transition-all">
               {t("faq.title")}
             </h3>
-            <span className="text-light-utility-medium dark:text-dark-utility-medium text-lg font-normal transition-all">
+            <span className="text-light-utility-medium dark:text-dark-utility-medium text-lg font-normal transition-all text-center">
               {t("faq.description")}
             </span>
           </div>
