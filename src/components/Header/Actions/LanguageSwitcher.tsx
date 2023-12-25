@@ -40,7 +40,6 @@ const LanguageSwitcher = () => {
 
     startTransition(() => {
       router.push(`/${lang}${newPath}`);
-      // window.history.pushState({}, "", `/${lang}${newPath}`);
 
       i18n.changeLanguage(lang);
       setOpen(false);
@@ -67,7 +66,8 @@ const LanguageSwitcher = () => {
           <Button
             className={btnClasses}
             key={lang}
-            onClick={() => {
+            onClick={(e) => {
+              e.stopPropagation();
               handleClick(lang);
             }}
           >

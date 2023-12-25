@@ -19,9 +19,12 @@ const Participation = () => {
         </span>
         <div className="flex flex-1">
           {" "}
-          <span className="font-normal text-lg text-light-utility-medium dark:text-dark-utility-medium">
-            {t("guides.participation.description")}
-          </span>
+          <span
+            className="font-normal text-lg text-light-utility-medium dark:text-dark-utility-medium"
+            dangerouslySetInnerHTML={{
+              __html: t("guides.participation.description"),
+            }}
+          ></span>
         </div>
       </div>
 

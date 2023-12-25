@@ -70,9 +70,12 @@ const Win = () => {
         <span className="font-medium text-2xl text-light-utility-high dark:text-dark-utility-high">
           {t("guides.victory.title")}
         </span>
-        <span className="font-normal text-lg text-light-utility-medium dark:text-dark-utility-medium">
-          {t("guides.victory.description")}
-        </span>
+        <span
+          className="font-normal text-lg text-light-utility-medium dark:text-dark-utility-medium"
+          dangerouslySetInnerHTML={{
+            __html: t("guides.victory.description"),
+          }}
+        />
       </div>
 
       <div className="bg-light-background-primary dark:bg-dark-background-primary flex-1 rounded-2xl flex items-center justify-center overflow-hidden relative transition-all">

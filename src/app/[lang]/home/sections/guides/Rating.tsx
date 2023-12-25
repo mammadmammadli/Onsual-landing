@@ -56,9 +56,12 @@ const Rating = () => {
         <span className="font-medium text-2xl text-light-utility-high dark:text-dark-utility-high">
           {t("guides.leaderboard.title")}
         </span>
-        <span className="font-normal text-lg text-light-utility-medium dark:text-dark-utility-medium">
-          {t("guides.leaderboard.description")}
-        </span>
+        <span
+          className="font-normal text-lg text-light-utility-medium dark:text-dark-utility-medium"
+          dangerouslySetInnerHTML={{
+            __html: t("guides.leaderboard.description"),
+          }}
+        />
       </div>
       <div className="flex-1 rounded-2xl bg-light-background-primary dark:bg-dark-background-primary px-7 lg:px-[60px] pt-[36px] overflow-hidden transition-all">
         <div className="rounded-xl bg-light-surface-high dark:bg-dark-surface-high pt-2 transition-all">

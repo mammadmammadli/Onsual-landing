@@ -9,7 +9,7 @@ const Hamburger = () => {
   const [isOpen, setOpen] = useState(false);
 
   const hamburgerIconClasses = clsx(
-    "fill-light-utility-high dark:fill-dark-utility-high",
+    "fill-light-utility-high dark:fill-dark-utility-high"
   );
 
   return (
@@ -28,6 +28,9 @@ const Hamburger = () => {
             transition={{
               ease: "linear",
               duration: 0.2,
+            }}
+            onClick={(e) => {
+              setOpen(false);
             }}
           >
             <div className="absolute top-4 right-4 gap-3">

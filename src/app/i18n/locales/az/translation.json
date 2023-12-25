@@ -33,21 +33,21 @@
   "guides": {
     "title": "4 ADDIMDA ONSUAL",
     "register": {
-      "description": "Sadəcə mobil nömrənizi daxil edərək çox asan şəkildə qeydiyyatdan keçin",
+      "description": "Sadəcə mobil nömrənizi daxil edərək çox <br /> asan şəkildə qeydiyyatdan keçin",
       "inputlabel": "Mobil nömrənizi daxil edin",
       "title": "Qeydiyyat"
     },
     "participation": {
       "title": "İştirak",
-      "description": "Gün ərzində təqdim olunan yarışmalarda iştirak edərək xallar qazanın"
+      "description": "Gün ərzində təqdim olunan yarışmalarda iştirak <br /> edərək xallar qazanın"
     },
     "leaderboard": {
       "title": "Sıralama",
-      "description": "Yığdığınız xallara uyğun olaraq sıralamada müvafiq yerləri tutun"
+      "description": "Yığdığınız xallara uyğun olaraq sıralamada <br /> müvafiq yerləri tutun"
     },
     "victory": {
       "title": "Qalibiyyət",
-      "description": "Qaliblər sıralarında yer alaraq, tutduğunuz yerə uyğun müxtəlif mükafatlar qazanın",
+      "description": "Qaliblər sıralarında yer alaraq, tutduğunuz yerə <br /> uyğun müxtəlif mükafatlar qazanın",
       "win": {
         "title": "Təbrik edirik!",
         "description": "Müfakat məbləği:"

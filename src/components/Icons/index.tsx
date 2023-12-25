@@ -35,6 +35,7 @@ export type IconNames =
   | "minus"
   | "plus"
   | "login"
+  | "logo"
   | "watch"
   | "light"
   | "close"
@@ -102,6 +103,8 @@ const Icon = (props: IconProps) => {
       return <Hamburger {...props} />;
     case "ellipse":
       return <Ellipse />;
+    case "logo":
+      return 
     default:
       return null;
   }

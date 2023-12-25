@@ -14,7 +14,8 @@ const LightModeSwitcher = () => {
       size={device === "sm" ? "md" : "lg"}
       icon={theme === "dark" ? "sun" : "moon"}
       className="fill-light-utility-high dark:fill-dark-utility-high"
-      onClick={() => {
+      onClick={(e) => {
+        e.stopPropagation();
         startTransition(() => {
           setTheme(theme === "dark" ? "light" : "dark");
         });

@@ -28,7 +28,7 @@
     "copyright": "© {{year}} Onsual. All rights reserved.",
     "message": "From Azerbaijan with love ❤\uFE0F"
   },
-  "get-started": "GET STARTED WITH <span class=\"text-light-brand-primary lg:text-dark-brand-primary transition-all\"> ONSUAL",
+  "get-started": "GET STARTED WITH <span class=\"text-light-brand-primary dark:text-dark-brand-primary lg:text-dark-brand-primary transition-all\"> ONSUAL",
   "get-started-subtitle": "Play anytime, win every time: Join Onsual's contests for various rewards",
   "guides": {
     "title": "Onsual in 4 steps",

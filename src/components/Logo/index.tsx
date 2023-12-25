@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { clsx } from "clsx";
+import Login from "../Icons/Login";
 
 type LogoProps = {
   containerClassName?: string;
@@ -10,15 +10,7 @@ const Logo = ({ containerClassName = "" }: LogoProps) => {
 
   return (
     <div className={containerClasses}>
-      <Image
-        src="/images/logo.svg"
-        alt="Onsual logo"
-        fill
-        priority
-        quality={100}
-        loading="eager"
-        sizes="(max-width: 640px) 100vw, (min-width:641px) 200px"
-      />
+      <Login className="fill-light-brand-primary dark:fill-dark-brand-primary h-8 lg:h-10" />
     </div>
   );
 };

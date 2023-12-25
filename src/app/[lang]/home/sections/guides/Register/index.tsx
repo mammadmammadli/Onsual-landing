@@ -14,10 +14,13 @@ const Index = () => {
         <span className="font-medium text-2xl text-light-utility-high dark:text-dark-utility-high">
           {t("guides.register.title")}
         </span>
-        <div className="flex flex-1">
-          <span className="font-normal text-lg text-light-utility-medium dark:text-dark-utility-medium">
-            {t("guides.register.description")}
-          </span>
+        <div className="flex items-center flex-1">
+          <span
+            className="font-normal text-lg text-light-utility-medium dark:text-dark-utility-medium"
+            dangerouslySetInnerHTML={{
+              __html: t("guides.register.description"),
+            }}
+          />
         </div>
       </div>
       <div className="rounded-2xl bg-light-background-primary dark:bg-dark-background-primary overflow-hidden transition-all flex items-center max-h-[200px] mt-auto h-[200px]">
