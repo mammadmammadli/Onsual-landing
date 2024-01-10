@@ -2,6 +2,8 @@ import { cookieName, fallbackLng, languages } from "@/app/i18n/settings";
 import acceptLanguage from "accept-language";
 import { NextRequest, NextResponse } from "next/server";
 
+const nonLocalizedPaths = ["/privacy"];
+
 export const config = {
   // matcher: '/:lng*'
   matcher: [
@@ -14,11 +16,15 @@ acceptLanguage.languages(languages);
 
 export function middleware(req: NextRequest) {
   let lng;
-
   if (req.cookies.has(cookieName)) {
     lng = acceptLanguage.get(req.cookies.get(cookieName)!.value);
   }
   if (!lng) lng = fallbackLng;
+
+
+  if (nonLocalizedPaths.some((path) => req.nextUrl.pathname.startsWith(path))) {
+    return NextResponse.next();
+  }
 
   // Redirect if lng in path is not supported
   if (
@@ -26,14 +32,14 @@ export function middleware(req: NextRequest) {
     !req.nextUrl.pathname.startsWith("/_next")
   ) {
     return NextResponse.redirect(
-      new URL(`/${lng}${req.nextUrl.pathname}`, req.url),
+      new URL(`/${lng}${req.nextUrl.pathname}`, req.url)
     );
   }
 
   if (req.headers.has("referer")) {
     const refererUrl = new URL(req.headers.get("referer")!);
     const lngInReferer = languages.find((l) =>
-      refererUrl.pathname.startsWith(`/${l}`),
+      refererUrl.pathname.startsWith(`/${l}`)
     );
     const response = NextResponse.next();
     if (lngInReferer) response.cookies.set(cookieName, lngInReferer);
