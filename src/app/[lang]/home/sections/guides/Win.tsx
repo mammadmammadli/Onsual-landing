@@ -47,12 +47,12 @@ const Win = () => {
       } else {
         thirdControl.set({
           opacity: 0,
-          x: -120,
+          y: 40,
         });
 
         thirdControl.start({
           opacity: 1,
-          x: 0,
+          y: 0,
         });
       }
     }

@@ -3,11 +3,14 @@ import { useTheme } from "next-themes";
 import useResponsive from "@/hooks/useResponsive";
 import { useTransition } from "react";
 
-const LightModeSwitcher = () => {
+type Props = {
+  onClose?: () => void;
+};
+
+const LightModeSwitcher = ({ onClose }: Props) => {
   const { theme, setTheme } = useTheme();
   const { device } = useResponsive();
   const [, startTransition] = useTransition();
-
 
   return (
     <IconButton
@@ -18,6 +21,7 @@ const LightModeSwitcher = () => {
         e.stopPropagation();
         startTransition(() => {
           setTheme(theme === "dark" ? "light" : "dark");
+          onClose?.();
         });
       }}
     />

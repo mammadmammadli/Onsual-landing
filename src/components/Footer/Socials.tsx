@@ -1,7 +1,7 @@
 const FooterSocials = () => {
   return (
     <div>
-      <ul className="flex flex-col items-end gap-4">
+      <ul className="flex flex-col lg:items-end gap-4">
         <li>
           <a
             href="#"

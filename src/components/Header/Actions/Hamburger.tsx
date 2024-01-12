@@ -51,7 +51,7 @@ const Hamburger = () => {
                   top: 16,
                 }}
               >
-                <LightModeSwitcher />
+                <LightModeSwitcher onClose={() => setOpen(false)} />
               </motion.div>
               <motion.div
                 className="absolute right-0"
